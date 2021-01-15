@@ -22,7 +22,7 @@ jobs:
           fetch-depth: '0'
           persist-credentials: false 
       - name: Install 🔧
-        run: npm install
+        run: yarn install
       - name: Build 🔧
         run: yarn build
       - name: Deploy 🚀
