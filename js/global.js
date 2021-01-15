@@ -13,3 +13,5 @@ function flashtext(ele, col) {
 setInterval(function () {
     flashtext('hello-world', 'red');
 }, 500); //set an interval timer up to repeat the function
+
+loadFontawesome()

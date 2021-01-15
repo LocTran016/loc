@@ -4,6 +4,9 @@
     "type": "git",
     "url": "https://github.com/LocTran016/loc.git"
   },
+  "scripts": {
+    "build": "gulp"
+  },
   "devDependencies": {
     "eslint": "^7.17.0",
     "eslint-plugin-css-modules": "^2.11.0",

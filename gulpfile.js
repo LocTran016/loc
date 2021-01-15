@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const webp = require('gulp-webp');
+const imagemin = require('gulp-imagemin');
  
 gulp.task('imgToWeBP', () =>
     gulp.src('src/img/')
@@ -7,4 +8,10 @@ gulp.task('imgToWeBP', () =>
         .pipe(gulp.dest('img/'))
 );
 
-gulp.task('default', ['imgToWeBP']);
+gulp.task('minImg', () =>  
+    gulp.src('src/img/')
+        .pipe(imagemin())
+        .pipe(gulp.dest('/img'))
+)
+
+gulp.task('default', ['imgToWeBP', 'minImg']);
