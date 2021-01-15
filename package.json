@@ -5,10 +5,12 @@
     "url": "https://github.com/LocTran016/loc.git"
   },
   "scripts": {
+    "test": "eslint . --ext .js,.html,.html",
     "build": "gulp"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-html": "^6.1.1",
     "gulp": "^4.0.2",
