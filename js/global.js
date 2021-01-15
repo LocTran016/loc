@@ -1,3 +1,5 @@
+import { loadFontawesome } from fontawesome.js
+
 function flashtext(ele, col) {
     var tmpColCheck = document.getElementById(ele).style.color;
 
