@@ -5,13 +5,13 @@ const imagemin = require('gulp-imagemin');
 gulp.task('imgToWeBP', () =>
     gulp.src('src/img/')
         .pipe(webp())
-        .pipe(gulp.dest('img/'))
+        .pipe(gulp.dest('public/img/'))
 );
 
 gulp.task('minImg', () =>  
     gulp.src('src/img/')
         .pipe(imagemin())
-        .pipe(gulp.dest('/img'))
+        .pipe(gulp.dest('public/img/'))
 )
 
 gulp.task('default', ['imgToWeBP', 'minImg']);
