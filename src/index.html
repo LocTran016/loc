@@ -2,11 +2,14 @@
 <html lang="vi-VN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/jpg" href="src/photo/favicon.jpeg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LocTran016</title>
-    <link rel="shortcut icon" type="image/jpg" href="photo/favicon.jpeg"/>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+    <!--<Deject>-->
+      <link rel="stylesheet" href="css/global.css" />
+    <!--</Deject>-->
+    <!-- inject:css -->
+    <!-- endinject -->
     </head>
     <body>
       <h1 id="hello-world">Hello World</h1>
@@ -20,13 +23,19 @@
       </span>
       <script src="https://cdn.jsdelivr.net/npm/typed.js@latest"></script>
       <script>
-      var typed = new Typed('#typed', {
+      // eslint-disable-next-line linebreak-style
+      // eslint-disable-next-line no-unused-vars
+      const typed = new Typed('#typed', {
         stringsElement: '#typed-strings',
         smartBackspace: true,
         typeSpeed: 40,
         loop: true,
       });
       </script>
+      <!-- inject:js -->
+      <!-- endinject -->
+      <!--<Deject>-->
+        <script src="js/global.js"></script>
+      <!--</Deject>-->
     </body>
-    <script src="js/global.js"></script>
 </html>

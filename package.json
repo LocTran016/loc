@@ -4,17 +4,30 @@
     "type": "git",
     "url": "https://github.com/LocTran016/loc.git"
   },
+  "author": {
+    "name": "loctran016"
+  },
   "scripts": {
-    "test": "eslint . --ext .js,.html,.html",
+    "lint": "eslint . --ext .js,.html,.css ./src/",
+    "lint-ci": "run-script-os",
+    "lint-ci:default": "yarn lint; yarn lint --fix",
+    "lint-ci:win32": "yarn lint & yarn lint --fix",
     "build": "gulp"
   },
   "devDependencies": {
+    "@flexis/favicons": "^1.5.0",
     "eslint": "^7.17.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-html": "^6.1.1",
     "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
     "gulp-imagemin": "^7.1.0",
-    "gulp-webp": "^4.0.1"
+    "gulp-inject": "^5.0.5",
+    "gulp-remove-html": "^1.3.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "mobile-device-detect": "^0.4.3",
+    "run-script-os": "^1.1.4"
   }
 }
