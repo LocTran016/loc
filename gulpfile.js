@@ -45,11 +45,11 @@ function minImg() {
         .pipe(dest('public/img/'))
 }
 
-function faviconICO() {
+/* function faviconICO() {
     return src('src/img/favicon.jpeg')
     .pipe(favicons())
     .pipe(dest('public/img/'))
-}
+} */
 function injectAssets() {
     var target = src('./src/**/*.html');
     // It's not necessary to read the files (will speed up things), we're only after their paths:
@@ -84,7 +84,6 @@ function watchTask() {
     watch(['src/js/*.js', 'src/css/*.css'], series(minJS, minCSS, injectAssets)),
     watch('./src/**/*.html', removeCode,),
     watch('src/img/', series(minImg,imgToWeBP))
-    watch('src/img/favicon.jpeg', faviconICO)
+    // watch('src/img/favicon.jpeg', faviconICO)
 }
-
-exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, removeCode, faviconICO, watchTask);
+exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, removeCode, /* faviconICO,*/ watchTask);
