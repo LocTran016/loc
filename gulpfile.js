@@ -47,9 +47,7 @@ function minImg() {
 
 function faviconICO() {
     return src('src/img/favicon.jpeg')
-    .pipe(favicons({
-        headers: true
-    }))
+    .pipe(favicons())
     .pipe(dest('public/img/'))
 }
 function injectAssets() {
