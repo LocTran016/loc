@@ -3659,6 +3659,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"gulp-terser@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "gulp-terser@npm:2.0.1"
+  dependencies:
+    plugin-error: ^1.0.1
+    terser: 5.4.0
+    through2: ^4.0.2
+    vinyl-sourcemaps-apply: ^0.2.1
+  checksum: 5ceed80163fe0721a5c7467e50ea071f77359d2ad6410ad8cebb30d5d19828725893b44c7f6d4ebcdecf8cb03956e1bd15efd982a7a8c8f1848e37e2e157c2df
+  languageName: node
+  linkType: hard
+
 "gulp-util@npm:^3.0.6":
   version: 3.0.8
   resolution: "gulp-util@npm:3.0.8"
@@ -4894,6 +4906,7 @@ fsevents@^1.2.7:
     gulp-inject: ^5.0.5
     gulp-remove-html: ^1.3.0
     gulp-rename: ^2.0.0
+    gulp-terser: ^2.0.1
     gulp-webp: ^4.0.1
     mobile-device-detect: ^0.4.3
     run-script-os: ^1.1.4
@@ -6652,7 +6665,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:2 || 3, readable-stream@npm:^3.1.1, readable-stream@npm:^3.4.0":
+"readable-stream@npm:2 || 3, readable-stream@npm:3, readable-stream@npm:^3.1.1, readable-stream@npm:^3.4.0":
   version: 3.6.0
   resolution: "readable-stream@npm:3.6.0"
   dependencies:
@@ -7993,6 +8006,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"terser@npm:5.4.0":
+  version: 5.4.0
+  resolution: "terser@npm:5.4.0"
+  dependencies:
+    commander: ^2.20.0
+    source-map: ~0.7.2
+    source-map-support: ~0.5.19
+  bin:
+    terser: bin/terser
+  checksum: 999f3392c65f43a66f7c411fb0b26f77b11d1569ec8898424eb0e216c93df3c342153721565eb5aabde81260012a10410124314881425dd660b60c817de6a50b
+  languageName: node
+  linkType: hard
+
 "terser@npm:^5.5.1":
   version: 5.5.1
   resolution: "terser@npm:5.5.1"
@@ -8058,6 +8084,15 @@ fsevents@^1.2.7:
     inherits: ^2.0.4
     readable-stream: 2 || 3
   checksum: 26c76a8989c8870e422c262506b55020ab42ae9c0888b8096dd140f8d6ac09ada59f71cddd630ccc5b3aa0bba373c223a27b969e830ee6040f12db952c15a8cd
+  languageName: node
+  linkType: hard
+
+"through2@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "through2@npm:4.0.2"
+  dependencies:
+    readable-stream: 3
+  checksum: 5a844792cf4fcdda0640ed3c619498724b2dfacfc24da438e1478bfd8d10a2831bd5824cf4ca8ec28a4fcd569b2acc7e8b0a673d269003009cb90e140e57a0ba
   languageName: node
   linkType: hard
 
@@ -8555,7 +8590,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"vinyl-sourcemaps-apply@npm:0.2.1":
+"vinyl-sourcemaps-apply@npm:0.2.1, vinyl-sourcemaps-apply@npm:^0.2.1":
   version: 0.2.1
   resolution: "vinyl-sourcemaps-apply@npm:0.2.1"
   dependencies:
