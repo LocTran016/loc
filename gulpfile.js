@@ -14,18 +14,18 @@ function removeCode() {
   };
 
 function imgToWeBP() {
-    src('src/img/')
+    return src('src/img/')
         .pipe(webp())
         .pipe(dest('public/img/'))
 }
 function minImg() {
-    src('src/img/')
+    return src('src/img/')
         .pipe(imagemin())
         .pipe(dest('public/img/'))
 }
 
 function faviconICO() {
-    src('src/img/favicon.jpeg')
+    return src('src/img/favicon.jpeg')
     .pipe(favicons({
         headers: true
     }))
