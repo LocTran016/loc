@@ -7,6 +7,7 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const gulpRemoveHtml = require('gulp-remove-html');
 const terser = require('gulp-terser');
+const eslint = require('gulp-eslint');
 
 function removeCode() {
     return src('src/*.html')

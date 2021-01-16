@@ -23,10 +23,7 @@ jobs:
           persist-credentials: false 
       - name: Install 🔧
         run: yarn install
-      - name: Lint 📄
-        continue-on-error: true
-        run: yarn lint-ci
-      - name: Build 🔧
+      - name: Build 🔧 and Lint 📄 
         run: yarn build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
