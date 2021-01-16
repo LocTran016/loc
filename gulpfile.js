@@ -1,17 +1,17 @@
-const gulp = require('gulp');
+const {gulp, series} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
  
-gulp.task('imgToWeBP', () =>
+function imgToWeBP() {
     gulp.src('src/img/')
         .pipe(webp())
-        .pipe(gulp.dest('img/'))
-);
+        .pipe(gulp.dest('public/img/'))
+}
 
-gulp.task('minImg', () =>  
+function minImg() {
     gulp.src('src/img/')
         .pipe(imagemin())
-        .pipe(gulp.dest('/img'))
-)
+        .pipe(gulp.dest('public/img/'))
+}
 
-gulp.task('default', ['imgToWeBP', 'minImg']);
+exports.build = series(imgToWeBP, minImg);
