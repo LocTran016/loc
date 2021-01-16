@@ -5,7 +5,8 @@ const uglify = require('gulp-uglify');
 const favicons = require('@flexis/favicons/lib/stream');
 const inject = require('gulp-inject');
 const cleanCSS = require('gulp-clean-css');
-var gulpRemoveHtml = require('gulp-remove-html');
+const rename = require('gulp-rename');
+const gulpRemoveHtml = require('gulp-remove-html');
 
 function removeCode() {
     return src('src/*.html')
