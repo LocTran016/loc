@@ -1,4 +1,4 @@
-import { isMobile } from 'mobile-device-detect';
+import { isMobile } from 'mobile-device-detect'
 
 function loadFontawesome() {
   if (isMobile) {
