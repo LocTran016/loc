@@ -86,4 +86,4 @@ function watchTask() {
     watch('src/img/', series(minImg,imgToWeBP))
     // watch('src/img/favicon.jpeg', faviconICO)
 }
-exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, removeCode, /* faviconICO,*/ watchTask);
+exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, removeCode, /* faviconICO,*/);
