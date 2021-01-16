@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocTran016</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous"></script>
+    
+    <!-- inject:css -->
+    <!-- endinject -->
+    </head>
+    <body>
+      <h1 id="hello-world">Hello World</h1>
+      <div id="typed-strings">
+        <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+        <p>It <em>types</em> out sentences.</p>
+      </div>
+      <span id="typed"></span>
+      <span style="font-size: 3em; color: Tomato;">
+        <i class="fas fa-camera"></i>
+      </span>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@latest"></script>
+      <script>
+      // eslint-disable-next-line linebreak-style
+      // eslint-disable-next-line no-unused-vars
+      const typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        smartBackspace: true,
+        typeSpeed: 40,
+        loop: true,
+      });
+      </script>
+      <!-- inject:js -->
+      <!-- endinject -->
+      
+    </body>
+</html>
