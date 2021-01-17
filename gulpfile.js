@@ -10,7 +10,7 @@ const terser = require('gulp-terser');
 const eslint = require('gulp-eslint');
 
 function removeCode() {
-    return src('src/*.html')
+    return src(['src/**/*.html',"!src/partials/*.html"])
       .pipe(gulpRemoveHtml())
       .pipe(dest('public/'));
   };
@@ -38,7 +38,9 @@ function imgToWeBP() {
 }
 function minImg() {
     return src('src/img/')
-        .pipe(imagemin())
+        .pipe(imagemin({
+          verbose: true
+        }))
         .pipe(dest('public/img/'))
 }
 
@@ -49,7 +51,7 @@ function faviconICO() {
 }
 
 function injectAssets() {
-    var target = src('./src/**/*.html');
+    var target = src(['./src/**/*.html',"!src/partials/*.html"]);
     var sources = src(['./public/js/*.min.js', './public/css/*.css'], {read: false});
    
     return target.pipe(inject(sources))
