@@ -22,13 +22,10 @@ function lintFiles() {
             useEslintrc: true,
         }))
         .pipe(eslint.results(results => {
-            // Called once for all ESLint results.
             console.log(`Total Results: ${results.length}`);
             console.log(`Total Warnings: ${results.warningCount}`);
             console.log(`Total Errors: ${results.errorCount}`);
         }))
-        // eslint.format() outputs the lint results to the console.
-        // Alternatively use eslint.formatEach() (see Docs).
         .pipe(eslint.format())
         // To have the process exit with an error code (1) on
         // lint error, return the stream and pipe to failAfterError last.
@@ -45,14 +42,14 @@ function minImg() {
         .pipe(dest('public/img/'))
 }
 
-/* function faviconICO() {
+function faviconICO() {
     return src('src/img/favicon.jpeg')
     .pipe(favicons())
     .pipe(dest('public/img/'))
-} */
+}
+
 function injectAssets() {
     var target = src('./src/**/*.html');
-    // It's not necessary to read the files (will speed up things), we're only after their paths:
     var sources = src(['./public/js/*.min.js', './public/css/*.css'], {read: false});
    
     return target.pipe(inject(sources))
@@ -77,13 +74,7 @@ function minCSS(){
         console.log(`${details.name}: ${details.errors}`);
         console.log(`${details.name}: ${details.warnings}`);
       }))
-    .pipe(dest('dist'));
+    .pipe(dest('public/css/'));
 }
 
-function watchTask() {
-    watch(['src/js/*.js', 'src/css/*.css'], series(minJS, minCSS, injectAssets)),
-    watch('./src/**/*.html', removeCode,),
-    watch('src/img/', series(minImg,imgToWeBP))
-    // watch('src/img/favicon.jpeg', faviconICO)
-}
 exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, removeCode, /* faviconICO,*/);
