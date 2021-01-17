@@ -79,4 +79,4 @@ function minCSS(){
     .pipe(dest('public/css/'));
 }
 
-exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, removeCode, /* faviconICO,*/);
+exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, /* removeCode, faviconICO,*/);
