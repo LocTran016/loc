@@ -31,7 +31,7 @@ function imgToWeBP() {
     return src('src/img/*.{jpg,jpeg,png,gif}')
         .pipe(webp())
         .pipe(dest('public/img/'))
-},
+}
 
 function minImg() {
     return src('src/img/*.{jpg,jpeg,png,gif}')
@@ -39,13 +39,13 @@ function minImg() {
           verbose: true
         }))
         .pipe(dest('public/img/'))
-},
+}
 
 function faviconICO() {
     return src('src/img/favicon.jpeg')
     .pipe(favicons())
     .pipe(dest('public/img/'))
-},
+}
 
 function htmlCssJs() {
     return src('./src/')
@@ -61,29 +61,7 @@ function htmlCssJs() {
         console.log(`${details.name}: ${details.warnings}`);
       })))
       .pipe(dest('public/'));
-  };
-
-//   function js() {
-//     return src(filePath.js.src)
-//       .pipe(terser({
-//         module: true,
-//         ecma: 2015
-//       }))
-//       .pipe(rename({ extname: '.min.js' }))
-//       .pipe(dest(filePath.js.dist));
-//   }
-
-// function css(){
-//     return src(filePath.css.src)
-//     .pipe(cleanCSS({debug: true}, (details) => {
-//         console.log(`${details.name}: ${details.stats.originalSize}`);
-//         console.log(`${details.name}: ${details.stats.minifiedSize}`);
-//         console.log(`${details.name}: ${details.errors}`);
-//         console.log(`${details.name}: ${details.warnings}`);
-//       }))
-//     .pipe(rename({ extname: '.min.css' }))
-//     .pipe(dest(filePath.css.dist));
-// }
+  }
 
 function watch() {
   watch('src/**/*.html',browserSync.reload)
@@ -99,6 +77,7 @@ function liveReload() {
     },
   })
 }
+
 exports.favicon = faviconICO()
 exports.develop = series(liveReload,watch)
 exports.default = series(lint, imgToWeBP, minImg, htmlCssJs);
