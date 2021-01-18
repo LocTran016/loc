@@ -116,7 +116,7 @@ function watch() {
 function liveReload() {
   browserSync.init({
     server: {
-      baseDir: 'public'
+      baseDir: 'src'
     },
   })
 }
