@@ -13,30 +13,30 @@ var useref = require('gulp-useref');
 var lazypipe = require('lazypipe');
 const sourcemaps = require('gulp-sourcemaps'),
 
-var filePath = {
-  src: 'src/',
-  html: {
-    src: ['src/**/*.html',"!src/partials/*.html"],
-    dist: 'public/'
-  },
-  css: {
-    src: "src/css/*.css",
-    dist: "public/css/",
-    full_dist: "public/js/*.min.css"
-  },
-  js: {
-    src: "src/js/*.js",
-    dist: "public/js/",
-    full_dist: "public/js/*.min.js"
-  },
-  img: {
-    src: 'src/img/*.{jpg,jpeg,png,gif}',
-    dist: "public/img/"
-  }
-}
+// var filePath = {
+//   src: 'src/',
+//   html: {
+//     src: ['src/**/*.html',"!src/partials/*.html"],
+//     dist: 'public/'
+//   },
+//   css: {
+//     src: "src/css/*.css",
+//     dist: "public/css/",
+//     full_dist: "public/js/*.min.css"
+//   },
+//   js: {
+//     src: "src/js/*.js",
+//     dist: "public/js/",
+//     full_dist: "public/js/*.min.js"
+//   },
+//   img: {
+//     src: 'src/img/*.{jpg,jpeg,png,gif}',
+//     dist: "public/img/"
+//   }
+// }
 
 function lint() {
-    return src(filePath.src)
+    return src('./src/')
         .pipe(eslint({
             fix: true,
             useEslintrc: true,
@@ -50,16 +50,16 @@ function lint() {
   }
 
 function imgToWeBP() {
-    return src('src/img/')
+    return src('src/img/*.{jpg,jpeg,png,gif}')
         .pipe(webp())
         .pipe(dest('public/img/'))
 }
 function minImg() {
-    return src(filePath.img.src)
+    return src('src/img/*.{jpg,jpeg,png,gif}')
         .pipe(imagemin({
           verbose: true
         }))
-        .pipe(dest(filePath.img.src))
+        .pipe(dest('public/img/'))
 }
 
 function faviconICO() {
@@ -69,7 +69,7 @@ function faviconICO() {
 }
 
 function htmlCssJs() {
-    return src(filePath.src)
+    return src('./src/')
       .pipe(useref({}, lazypipe().pipe(sourcemaps.init, { loadMaps: true })))
       .pipe(gulpIf('*.js',terser({
         module: true,
@@ -81,7 +81,7 @@ function htmlCssJs() {
         console.log(`${details.name}: ${details.errors}`);
         console.log(`${details.name}: ${details.warnings}`);
       })))
-      .pipe(dest(filePath.html.dist));
+      .pipe(dest('public/'));
   };
 
 //   function js() {
@@ -107,10 +107,10 @@ function htmlCssJs() {
 // }
 
 function watch() {
-  watch(filePath.html.src,browserSync.reload)
-  watch(filePath.js.src,browserSync.reload)
-  watch(filePath.css.src,browserSync.reload)
-  watch(filePath.img.src,browserSync.reload)
+  watch('src/**/*.html',browserSync.reload)
+  watch('src/**/*.js',browserSync.reload)
+  watch('src/**/*.css',browserSync.reload)
+  watch('src/img/*.{jpg,jpeg,png,gif}',browserSync.reload)
 }
 
 function liveReload() {
