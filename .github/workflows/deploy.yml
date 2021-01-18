@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Build and Deploy 🚀
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v2-beta
         with:
