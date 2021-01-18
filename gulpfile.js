@@ -8,15 +8,32 @@ const rename = require('gulp-rename');
 const gulpRemoveHtml = require('gulp-remove-html');
 const terser = require('gulp-terser');
 const eslint = require('gulp-eslint');
+const browserSync = require('browser-sync').create();
 
-function removeCode() {
-    return src(['src/**/*.html',"!src/partials/*.html"])
-      .pipe(gulpRemoveHtml())
-      .pipe(dest('public/'));
-  };
+var filePath = {
+  src: 'src/',
+  html: {
+    src: ['src/**/*.html',"!src/partials/*.html"],
+    dist: 'public/'
+  },
+  css: {
+    src: "src/css/*.css",
+    dist: "public/css/",
+    full_dist: "public/js/*.min.css"
+  }
+  js: {
+    src: "src/js/*.js",
+    dist: "public/js/",
+    full_dist: "public/js/*.min.js"
+  }
+  img: {
+    src: 'src/img/*.{jpg,jpeg,png,gif}',
+    dist: "public/img/"
+  }
+}
 
-function lintFiles() {
-    return src(['src/js/*.js','src/css/*.css'])
+function lint() {
+    return src(filePath.src)
         .pipe(eslint({
             fix: true,
             useEslintrc: true,
@@ -26,9 +43,6 @@ function lintFiles() {
             console.log(`Total Warnings: ${results.warningCount}`);
             console.log(`Total Errors: ${results.errorCount}`);
         }))
-        .pipe(eslint.format())
-        // To have the process exit with an error code (1) on
-        // lint error, return the stream and pipe to failAfterError last.
         // .pipe(eslint.failAfterError());
   }
 function imgToWeBP() {
@@ -37,11 +51,11 @@ function imgToWeBP() {
         .pipe(dest('public/img/'))
 }
 function minImg() {
-    return src('src/img/')
+    return src(filePath.img.src)
         .pipe(imagemin({
           verbose: true
         }))
-        .pipe(dest('public/img/'))
+        .pipe(dest(filePath.img.src))
 }
 
 function faviconICO() {
@@ -50,33 +64,51 @@ function faviconICO() {
     .pipe(dest('public/img/'))
 }
 
-function injectAssets() {
-    var target = src(['./src/**/*.html',"!src/partials/*.html"]);
-    var sources = src(['./public/js/*.min.js', './public/css/*.css'], {read: false});
+function html() {
+    var sources = src([filePath.css.full_dist,filePath.js.full_dist], {read: false});
    
-    return target.pipe(inject(sources))
-      .pipe(dest('./public/'));
+    return src(filePath.html.src)
+      .pipe(inject(sources))
+      .pipe(dest(filePath.html.dist))
+      src(filePath.html.dist)
+      .pipe(gulpRemoveHtml())
+      .pipe(dest(filePath.html.dist));
   };
 
-  function minJS() {
-    return src('src/js/*.js')
+  function js() {
+    return src(filePath.js.src)
       .pipe(terser({
         module: true,
         ecma: 2015
       }))
       .pipe(rename({ extname: '.min.js' }))
-      .pipe(dest('public/js/'));
+      .pipe(dest(filePath.js.dist));
   }
 
-function minCSS(){
-    return src('src/css/*.css')
+function css(){
+    return src(filePath.css.src)
     .pipe(cleanCSS({debug: true}, (details) => {
         console.log(`${details.name}: ${details.stats.originalSize}`);
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
         console.log(`${details.name}: ${details.errors}`);
         console.log(`${details.name}: ${details.warnings}`);
       }))
-    .pipe(dest('public/css/'));
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(dest(filePath.css.dist));
 }
 
-exports.default = series(lintFiles, imgToWeBP, minImg, minCSS, minJS, injectAssets, /* removeCode, faviconICO,*/);
+function watch() {
+  watch(filePath.html.src,browserSync.reload)
+  watch(filePath.js.src, browserSync.reload)
+  watch(filePath.css.src, browserSync.reload)
+}
+
+function liveReload() {
+  browserSync.init({
+    server: {
+      baseDir: 'public'
+    },
+  })
+}
+export.develop = series(liveReload,watch)
+exports.default = series(lint, imgToWeBP, minImg, css, js, html, /*faviconICO,*/);
