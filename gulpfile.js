@@ -8,9 +8,8 @@ const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const eslint = require('gulp-eslint');
 const browserSync = require('browser-sync').create();
-var gulpIf = require('gulp-if');
-var useref = require('gulp-useref');
-var lazypipe = require('lazypipe');
+const gulpIf = require('gulp-if');
+const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps'),
 
 function lint() {
@@ -49,7 +48,8 @@ function faviconICO() {
 
 function htmlCssJs() {
     return src('./src/')
-      .pipe(useref({}, lazypipe().pipe(sourcemaps.init, { loadMaps: true })))
+    .pipe(sourcemaps.init())
+      .pipe(useref)
       .pipe(gulpIf('*.js',terser({
         module: true,
         ecma: 2015
@@ -60,6 +60,7 @@ function htmlCssJs() {
         console.log(`${details.name}: ${details.errors}`);
         console.log(`${details.name}: ${details.warnings}`);
       })))
+    .pipe(sourcemaps.write())
       .pipe(dest('public/'));
   }
 
