@@ -1,3 +1,5 @@
+"use strict";
+
 const {dest, series, src, watch} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
@@ -12,12 +14,13 @@ const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps'),
 
-function lint() {
+function Fileslint() {
     return src('./src/')
         .pipe(eslint({
             fix: true,
             useEslintrc: true,
         }))
+.pipe(eslint.format())
         .pipe(eslint.results(results => {
             console.log(`Total Results: ${results.length}`);
             console.log(`Total Warnings: ${results.warningCount}`);
@@ -81,4 +84,4 @@ function liveReload() {
 
 exports.favicon = faviconICO()
 exports.develop = series(liveReload,watch)
-exports.default = series(lint, imgToWeBP, minImg, htmlCssJs);
+exports.default = series(Fileslint, imgToWeBP, minImg, htmlCssJs);
