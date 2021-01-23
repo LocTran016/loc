@@ -14,21 +14,6 @@ const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps'),
 
-function Fileslint() {
-    return src('./src/')
-        .pipe(eslint({
-            fix: true,
-            useEslintrc: true,
-        }))
-.pipe(eslint.format())
-        .pipe(eslint.results(results => {
-            console.log(`Total Results: ${results.length}`);
-            console.log(`Total Warnings: ${results.warningCount}`);
-            console.log(`Total Errors: ${results.errorCount}`);
-        }))
-        // .pipe(eslint.failAfterError());
-  }
-
 function imgToWeBP() {
     return src('src/img/*.{jpg,jpeg,png,gif}')
         .pipe(webp())
@@ -81,6 +66,21 @@ function liveReload() {
     },
   })
 }
+
+function Fileslint() {
+    return src('./src/')
+        .pipe(eslint({
+            fix: true,
+            useEslintrc: true,
+        }))
+.pipe(eslint.format())
+        .pipe(eslint.results(results => {
+            console.log(`Total Results: ${results.length}`);
+            console.log(`Total Warnings: ${results.warningCount}`);
+            console.log(`Total Errors: ${results.errorCount}`);
+        }))
+        // .pipe(eslint.failAfterError());
+  }
 
 exports.favicon = faviconICO()
 exports.develop = series(liveReload,watch)
