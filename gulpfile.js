@@ -11,6 +11,7 @@ const browserSync = require('browser-sync').create();
 const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps');
+const lec = require('gulp-line-ending-corrector');
 
 function imgToWeBP() {
     return src('src/img/*.{jpg,jpeg,png,gif}')
@@ -31,6 +32,12 @@ function minImg() {
 //     .pipe(favicons())
 //     .pipe(dest('public/img/'))
 // }
+
+function lineEndingFix() {
+  return src(['src/**/*.html'])
+      .pipe(lec({eolc: 'CRLF'}))
+      .pipe(gulp.dest('./src/'));
+}
 
 function htmlCssJs() {
     return src('./src/')
@@ -82,4 +89,4 @@ function Fileslint() {
 
 // exports.favicon = faviconICO()
 exports.develop = series(liveReload,watchFiles)
-exports.default = series(Fileslint, imgToWeBP, minImg, htmlCssJs);
+exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, htmlCssJs);
