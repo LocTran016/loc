@@ -39,8 +39,8 @@ function lineEndingFix() {
       .pipe(dest('./src/'));
 }
 
-function htmlCssJs() {
-    return src(['./src/','src/img/*.{jpg,jpeg,png,gif}'])
+function compileCode() {
+    return src(['./src/','!src/img/*.{jpg,jpeg,png,gif}'])
     .pipe(sourcemaps.init())
       .pipe(useref())
       .pipe(gulpIf('*.js',terser({
@@ -89,4 +89,4 @@ function Fileslint() {
 
 // exports.favicon = faviconICO()
 exports.develop = series(liveReload,watchFiles)
-exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, htmlCssJs);
+exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, compileCode);
