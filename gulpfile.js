@@ -40,7 +40,7 @@ function lineEndingFix() {
 }
 
 function htmlCssJs() {
-    return src('./src/')
+    return src(['./src/','src/img/*.{jpg,jpeg,png,gif}'])
     .pipe(sourcemaps.init())
       .pipe(useref())
       .pipe(gulpIf('*.js',terser({
