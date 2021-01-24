@@ -73,7 +73,7 @@ function Fileslint() {
             fix: true,
             useEslintrc: true,
         }))
-.pipe(eslint.format())
+        .pipe(eslint.format())
         .pipe(eslint.results(results => {
             console.log(`Total Results: ${results.length}`);
             console.log(`Total Warnings: ${results.warningCount}`);
