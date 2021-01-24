@@ -2,11 +2,7 @@
 document.getElementById('fullScreenButton').addEventListener('click',
     function() {
       if (screenfull.isEnabled) {
-        if (screenfull.isFullscreen) {
-          screenfull.request();
-        } else {
-          screenfull.exit();
-        }
+        screenfull.toggle();
       } else {
         alert('Your browser doesn\'t support full screen');
       }
