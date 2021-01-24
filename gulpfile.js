@@ -12,7 +12,7 @@ const eslint = require('gulp-eslint');
 const browserSync = require('browser-sync').create();
 const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
-const sourcemaps = require('gulp-sourcemaps'),
+const sourcemaps = require('gulp-sourcemaps');
 
 function imgToWeBP() {
     return src('src/img/*.{jpg,jpeg,png,gif}')
