@@ -36,7 +36,7 @@ function minImg() {
 function lineEndingFix() {
   return src(['src/**/*.html'])
       .pipe(lec({eolc: 'CRLF'}))
-      .pipe(gulp.dest('./src/'));
+      .pipe(dest('./src/'));
 }
 
 function htmlCssJs() {
