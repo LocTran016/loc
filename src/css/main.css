@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&family=Yusei+Magic&display=swap');
+h1 {
+    font-size: 100px;
+    font-family: 'Potta One', cursive;
+}
+p {
+    color: #000000,
+    font-size: 14px,
+    font-family: "Potta One", cursive;
+}
+
+html {
+    background-color: #ffffff;
+}
+
+body {
+  width: auto;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 0 20px 20px 20px;
+}
+
+#typed-strings {
+font-family: 'Potta One', cursive; 
+}
+
