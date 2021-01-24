@@ -42,7 +42,7 @@ function lineEndingFix() {
 function htmlCssJs() {
     return src('./src/')
     .pipe(sourcemaps.init())
-      .pipe(useref)
+      .pipe(useref())
       .pipe(gulpIf('*.js',terser({
         module: true,
         ecma: 2015
