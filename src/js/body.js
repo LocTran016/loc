@@ -2,9 +2,13 @@
 document.getElementById('fullScreenButton').addEventListener('click',
     function() {
       if (screenfull.isEnabled) {
-        screenfull.request();
+        if (screenfull.isFullscreen) {
+          screenfull.request();
+        } else {
+          screenfull.exit();
+        }
       } else {
-        screenfull.exit();
+        alert('Your browser doesn\'t support full screen');
       }
       if (screenfull.isEnabled) {
         screenfull.on('change', () => {
