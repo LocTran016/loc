@@ -52,7 +52,7 @@ function htmlCssJs() {
       .pipe(dest('public/'));
   }
 
-function watch() {
+function watchFiles() {
   watch('src/**/*.html',browserSync.reload)
   watch('src/**/*.js',browserSync.reload)
   watch('src/**/*.css',browserSync.reload)
@@ -83,5 +83,5 @@ function Fileslint() {
   }
 
 exports.favicon = faviconICO()
-exports.develop = series(liveReload,watch)
+exports.develop = series(liveReload,watchFiles)
 exports.default = series(Fileslint, imgToWeBP, minImg, htmlCssJs);
