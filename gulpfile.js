@@ -3,10 +3,8 @@
 const {dest, series, src, watch} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
-const favicons = require('@flexis/favicons/lib/stream');
-// const inject = require('gulp-inject');
+// const favicons = require('@flexis/favicons/lib/stream');
 const cleanCSS = require('gulp-clean-css');
-// const rename = require('gulp-rename');
 const terser = require('gulp-terser');
 const eslint = require('gulp-eslint');
 const browserSync = require('browser-sync').create();
@@ -28,11 +26,11 @@ function minImg() {
         .pipe(dest('public/img/'))
 }
 
-function faviconICO() {
-    return src('src/img/favicon.jpeg')
-    .pipe(favicons())
-    .pipe(dest('public/img/'))
-}
+// function faviconICO() {
+//     return src('src/img/favicon.jpeg')
+//     .pipe(favicons())
+//     .pipe(dest('public/img/'))
+// }
 
 function htmlCssJs() {
     return src('./src/')
@@ -82,6 +80,6 @@ function Fileslint() {
         // .pipe(eslint.failAfterError());
   }
 
-exports.favicon = faviconICO()
+// exports.favicon = faviconICO()
 exports.develop = series(liveReload,watchFiles)
 exports.default = series(Fileslint, imgToWeBP, minImg, htmlCssJs);
