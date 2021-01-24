@@ -40,7 +40,7 @@ function lineEndingFix() {
 }
 
 function compileCode() {
-    return src(['src/**/*.html','!src/img/*.{jpg,jpeg,png,gif}'])
+    return src(['src/**/*.html'])
     .pipe(sourcemaps.init())
       .pipe(useref())
       .pipe(gulpIf('*.js',terser({
