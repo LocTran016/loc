@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 document.getElementById('fullScreenButton').addEventListener('click',
-    function() {
+    function fullScreenButton() {
       if (screenfull.isEnabled) {
         if (screenfull.isFullscreen) {
           screenfull.request();
