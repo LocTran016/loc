@@ -30,3 +30,20 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: public # The folder the action should deploy.
           CLEAN: true # 
+  develop:
+    name: Develop 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+      - name: Checkout Repository 🛎️
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+          persist-credentials: false 
+      - name: Install 🔧
+        run: yarn install
+      - name:  Develop 📄 
+        run: yarn dev
+  
