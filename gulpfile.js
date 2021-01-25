@@ -3,7 +3,7 @@
 const {dest, series, src, watch} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
-const favicons = require('@flexis/favicons/lib/stream');
+const favicons = require('gulp-favicons');
 const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const eslint = require('gulp-eslint');
@@ -11,7 +11,6 @@ const browserSync = require('browser-sync').create();
 const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps');
-const manifest = require('./manifest.json');
 const lec = require('gulp-line-ending-corrector');
 
 function imgToWeBP() {
@@ -28,14 +27,31 @@ function minImg() {
         .pipe(dest('public/img/'))
 }
 
-// function faviconICO() {
-     // return src('src/img/favicon.{jpg,jpeg,png,gif}')
-     // .pipe(favicons({
-        // manifest,
-        // headers: true
-     // }))
-     // .pipe(dest('public/'))
-// }
+function faviconICO() {
+     return src('src/img/favicon.{jpg,jpeg,png,gif}')
+     .pipe(
+      favicons({
+        appName: 'LocTran016 - All my presentation',
+        appShortName: 'LocTran016',
+        appDescription: 'I used this website to store all my presentations for school',
+        developerName: 'Tran Tan Loc',
+        developerURL: 'https://loctran016.github.io/',
+        background: '#020307',
+        path: '/',
+        url: 'https://loctran016.github.io/',
+        display: 'standalone',
+        orientation: 'portrait',
+        scope: '/',
+        start_url: '/?homescreen=1',
+        version: 1.0,
+        logging: false,
+        html: 'index.html',
+        pipeHTML: true,
+        replace: true,
+      })
+    )
+     .pipe(dest('public/'))
+}
 
 function lineEndingFix() {
   return src(['src/**/*.html'])
@@ -91,6 +107,6 @@ function Fileslint() {
         // .pipe(eslint.failAfterError());
   }
 
-// exports.favicon = faviconICO()
+exports.favicon = faviconICO()
 exports.develop = series(liveReload,watchFiles)
 exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, compileCode);
