@@ -70,7 +70,6 @@ function watchFiles() {
 
 function liveReload() {
   browserSync.init({
-    proxy: "localhost:8888/loc/",
     server: {
       baseDir: 'src'
     },
