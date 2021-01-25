@@ -29,7 +29,7 @@ function minImg() {
 
 function faviconICO() {
      return src('src/img/favicon.{jpg,jpeg,png,gif}')
-     .pipe(favicons())
+     .pipe(favicons({headers: true}))
      .pipe(dest('public/img/'))
 }
 
