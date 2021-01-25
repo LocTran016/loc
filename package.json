@@ -15,7 +15,8 @@
     "lint-ci": "run-script-os",
     "lint-ci:default": "yarn lint; yarn lint --fix",
     "lint-ci:win32": "yarn lint & yarn lint --fix",
-    "build": "gulp"
+    "build": "gulp",
+    "dev": "gulp develop"
   },
   "devDependencies": {
     "@flexis/favicons": "^1.5.0",

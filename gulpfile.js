@@ -3,7 +3,7 @@
 const {dest, series, src, watch} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
-// const favicons = require('@flexis/favicons/lib/stream');
+const favicons = require('@flexis/favicons/lib/stream');
 const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const eslint = require('gulp-eslint');
@@ -11,6 +11,7 @@ const browserSync = require('browser-sync').create();
 const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps');
+const manifest = require('./manifest.json');
 const lec = require('gulp-line-ending-corrector');
 
 function imgToWeBP() {
@@ -28,9 +29,12 @@ function minImg() {
 }
 
 // function faviconICO() {
-//     return src('src/img/favicon.jpeg')
-//     .pipe(favicons())
-//     .pipe(dest('public/img/'))
+     // return src('src/img/favicon.{jpg,jpeg,png,gif}')
+     // .pipe(favicons({
+        // manifest,
+        // headers: true
+     // }))
+     // .pipe(dest('public/'))
 // }
 
 function lineEndingFix() {
@@ -66,7 +70,6 @@ function watchFiles() {
 
 function liveReload() {
   browserSync.init({
-    proxy: "localhost:8888/loc/",
     server: {
       baseDir: 'src'
     },
