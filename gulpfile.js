@@ -34,7 +34,7 @@ function faviconICO() {
         manifest,
         headers: true
      }))
-     .pipe(dest('public/img/'))
+     .pipe(dest('public/'))
 }
 
 function lineEndingFix() {
