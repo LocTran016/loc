@@ -28,14 +28,14 @@ function minImg() {
         .pipe(dest('public/img/'))
 }
 
-function faviconICO() {
-     return src('src/img/favicon.{jpg,jpeg,png,gif}')
-     .pipe(favicons({
+// function faviconICO() {
+     // return src('src/img/favicon.{jpg,jpeg,png,gif}')
+     // .pipe(favicons({
         manifest,
         headers: true
      }))
-     .pipe(dest('public/'))
-}
+     // .pipe(dest('public/'))
+// }
 
 function lineEndingFix() {
   return src(['src/**/*.html'])
@@ -92,6 +92,6 @@ function Fileslint() {
         // .pipe(eslint.failAfterError());
   }
 
-exports.favicon = faviconICO()
+// exports.favicon = faviconICO()
 exports.develop = series(liveReload,watchFiles)
 exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, compileCode);
