@@ -63,6 +63,7 @@ function compileCode() {
     return src(['src/**/*.html'])
     .pipe(sourcemaps.init())
       .pipe(useref())
+      .pipe(sourcemaps.write())
       .pipe(gulpIf('*.js',terser({
         module: true,
         ecma: 2015
@@ -73,7 +74,6 @@ function compileCode() {
         console.log(`${details.name}: ${details.errors}`);
         console.log(`${details.name}: ${details.warnings}`);
       })))
-    .pipe(sourcemaps.write())
       .pipe(dest('public/'));
   }
 
