@@ -33,6 +33,7 @@ jobs:
   develop:
     name: Develop 🚀
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
       - uses: actions/setup-node@v2-beta
         with:
