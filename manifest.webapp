@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "LocTran016 - All my presentation",
+  "description": "I used this website to store all my presentations for school",
+  "icons": {
+    "60": "/firefox_app_60x60.png",
+    "128": "/firefox_app_128x128.png",
+    "512": "/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Tran Tan Loc",
+    "url": "https://loctran016.github.io/"
+  }
+}
