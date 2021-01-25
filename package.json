@@ -38,6 +38,7 @@
     "gulp-terser": "^2.0.1",
     "gulp-useref": "^5.0.0",
     "gulp-webp": "^4.0.1",
+    "lazypipe": "^1.0.2",
     "mobile-device-detect": "^0.4.3",
     "run-script-os": "^1.1.4",
     "terser": "^5.5.1"

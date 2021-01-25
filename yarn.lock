@@ -6139,6 +6139,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"lazypipe@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "lazypipe@npm:1.0.2"
+  dependencies:
+    stream-combiner: "*"
+  checksum: ad0d11197ba041df727452e5af9b6a9bd9804566c491d868116213c79ed84bf781f12b56eb0349e7bfd6d7d81117fe0a94e3a5e10899666d80a5edc37030a8f6
+  languageName: node
+  linkType: hard
+
 "lazystream@npm:^1.0.0":
   version: 1.0.0
   resolution: "lazystream@npm:1.0.0"
@@ -6293,6 +6302,7 @@ fsevents@~2.3.1:
     gulp-terser: ^2.0.1
     gulp-useref: ^5.0.0
     gulp-webp: ^4.0.1
+    lazypipe: ^1.0.2
     mobile-device-detect: ^0.4.3
     run-script-os: ^1.1.4
     terser: ^5.5.1
@@ -9322,7 +9332,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"stream-combiner@npm:^0.2.2":
+"stream-combiner@npm:*, stream-combiner@npm:^0.2.2":
   version: 0.2.2
   resolution: "stream-combiner@npm:0.2.2"
   dependencies:

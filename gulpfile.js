@@ -12,6 +12,7 @@ const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps');
 const lec = require('gulp-line-ending-corrector');
+const lazypipe = require('lazypipe');
 
 function imgToWeBP() {
     return src('src/img/*.{jpg,jpeg,png,gif}')
@@ -61,9 +62,8 @@ function lineEndingFix() {
 
 function compileCode() {
     return src(['src/**/*.html'])
-    .pipe(sourcemaps.init())
-      .pipe(useref())
-      .pipe(sourcemaps.write())
+      .pipe(useref({}, lazypipe().pipe(sourcemaps.init, { loadMaps: true })))
+      .pipe(sourcemaps.write('maps'))
       .pipe(gulpIf('*.js',terser({
         module: true,
         ecma: 2015
