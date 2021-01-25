@@ -3,7 +3,7 @@
 const {dest, series, src, watch} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
-// const favicons = require('@flexis/favicons/lib/stream');
+const favicons = require('@flexis/favicons/lib/stream');
 const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const eslint = require('gulp-eslint');
