@@ -11,6 +11,7 @@ const browserSync = require('browser-sync').create();
 const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const sourcemaps = require('gulp-sourcemaps');
+const manifest = require('./manifest.json');
 const lec = require('gulp-line-ending-corrector');
 
 function imgToWeBP() {
@@ -29,7 +30,10 @@ function minImg() {
 
 function faviconICO() {
      return src('src/img/favicon.{jpg,jpeg,png,gif}')
-     .pipe(favicons({headers: true}))
+     .pipe(favicons({
+        manifest,
+        headers: true
+     }))
      .pipe(dest('public/img/'))
 }
 
