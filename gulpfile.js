@@ -31,9 +31,9 @@ function minImg() {
 // function faviconICO() {
      // return src('src/img/favicon.{jpg,jpeg,png,gif}')
      // .pipe(favicons({
-        manifest,
-        headers: true
-     }))
+        // manifest,
+        // headers: true
+     // }))
      // .pipe(dest('public/'))
 // }
 
