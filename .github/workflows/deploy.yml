@@ -27,24 +27,6 @@ jobs:
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: public # The folder the action should deploy.
-          CLEAN: true # 
-  develop:
-    name: Develop 🚀
-    runs-on: ubuntu-latest
-    timeout-minutes: 2
-    steps:
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '14'
-      - name: Checkout Repository 🛎️
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: '0'
-          persist-credentials: false 
-      - name: Install 🔧
-        run: yarn install
-      - name:  Develop 📄 
-        run: yarn dev
-  
+          BRANCH: gh-pages
+          FOLDER: public
+          CLEAN: true
