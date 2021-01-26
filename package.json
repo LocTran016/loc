@@ -19,6 +19,9 @@
     "dev": "gulp develop"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@flexis/favicons": "^1.5.0",
     "browser-sync": "^2.26.13",
     "eslint": "^7.17.0",
@@ -42,5 +45,8 @@
     "mobile-device-detect": "^0.4.3",
     "run-script-os": "^1.1.4",
     "terser": "^5.5.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
   }
 }

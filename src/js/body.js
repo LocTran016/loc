@@ -6,10 +6,9 @@ document.querySelector('#fullScreenButton')
 function fullScreen() {
   if (screenfull.isEnabled) {
     screenfull.toggle();
-  document.querySelector('#fullscreen').removeAttribute('class');
-document.querySelector('#fullscreen').setAttribute('class', screenfull.isFullscreen ? 
-          'bi bi-fullscreen':'bi bi-fullscreen-exit');
-          
+    document.querySelector('#fullscreen').removeAttribute('class');
+    document.querySelector('#fullscreen').setAttribute('class',
+  screenfull.isFullscreen ? 'bi bi-fullscreen':'bi bi-fullscreen-exit');
   } else {
     alert('Your browser doesn\'t support full screen');
   }
