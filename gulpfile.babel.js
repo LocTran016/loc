@@ -34,15 +34,15 @@ const cache = require('gulp-cache');
 
 function imgToWeBP() {
   return src('src/img/*.{jpg,jpeg,png,gif}')
-      .pipe(cache(webp()))
+      .pipe(webp())
       .pipe(dest('public/img/'));
 }
 
 function minImg() {
   return src('src/img/*.{jpg,jpeg,png,gif}')
-      .pipe(cache(imagemin({
+      .pipe(imagemin({
         verbose: true,
-      })))
+      }))
       .pipe(dest('public/img/'));
 }
 
