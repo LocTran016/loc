@@ -18,6 +18,20 @@ const lazypipe = require('lazypipe');
 const babel = require('gulp-babel');
 const cache = require('gulp-cache');
 
+// function imgToWeBP() {
+//   return src('src/img/*.{jpg,jpeg,png,gif}')
+//       .pipe(cache(webp()))
+//       .pipe(dest('public/img/'));
+// }
+
+// function minImg() {
+//   return src('src/img/*.{jpg,jpeg,png,gif}')
+//       .pipe(cache(imagemin({
+//         verbose: true,
+//       })))
+//       .pipe(dest('public/img/'));
+// }
+
 function imgToWeBP() {
   return src('src/img/*.{jpg,jpeg,png,gif}')
       .pipe(cache(webp()))
