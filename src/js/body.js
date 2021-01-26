@@ -8,7 +8,7 @@ function fullScreen() {
     screenfull.toggle();
   document.querySelector('#fullscreen').removeAttribute('class');
 document.querySelector('#fullscreen').setAttribute('class', screenfull.isFullscreen ? 
-          'bi bi-fullscreen', 'bi bi-fullscreen-exit');
+          'bi bi-fullscreen':'bi bi-fullscreen-exit');
           
   } else {
     alert('Your browser doesn\'t support full screen');
