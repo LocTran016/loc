@@ -6,15 +6,10 @@ document.querySelector('#fullScreenButton')
 function fullScreen() {
   if (screenfull.isEnabled) {
     screenfull.toggle();
-    if (screenfull.isFullscreen) {
-      document.querySelector('#fullscreen').removeAttribute('class');
-      document.querySelector('#fullscreen').setAttribute('class',
-          'bi bi-fullscreen');
-    } else {
-      document.querySelector('#fullscreen').removeAttribute('class');
-      document.querySelector('#fullscreen').setAttribute('class',
-          'bi bi-fullscreen-exit');
-    }
+  document.querySelector('#fullscreen').removeAttribute('class');
+document.querySelector('#fullscreen').setAttribute('class', screenfull.isFullscreen ? 
+          'bi bi-fullscreen', 'bi bi-fullscreen-exit');
+          
   } else {
     alert('Your browser doesn\'t support full screen');
   }
