@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
 /* eslint-disable require-jsdoc */
 'use strict';
 const {dest, series, src, watch} = require('gulp');
@@ -57,31 +59,15 @@ function faviconICO() {
 
 function babelTransfer() {
   return src('src/js/*.js')
-      .pipe(babel({
-        'presets': [
-          [
-            '@babel/env',
-            {
-              'targets': {
-                'edge': '17',
-                'firefox': '60',
-                'chrome': '67',
-                'safari': '11.1',
-              },
-              'useBuiltIns': 'usage',
-              'corejs': '3.6.5',
-            },
-          ],
-        ],
-      }))
-      .pipe(gulp.dest('src/js/'));
+      .pipe(babel())
+      .pipe(dest('src/js/'));
 }
 
 function lineEndingFix() {
   return src(['src/**/*.html'])
       .pipe(lec({eolc: 'CRLF'}))
       .pipe(dest('./src/'));
-}l;
+};
 
 function compileCode() {
   return src(['src/**/*.html'])
