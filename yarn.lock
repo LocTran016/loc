@@ -1018,16 +1018,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/polyfill@npm:^7.12.1":
-  version: 7.12.1
-  resolution: "@babel/polyfill@npm:7.12.1"
-  dependencies:
-    core-js: ^2.6.5
-    regenerator-runtime: ^0.13.4
-  checksum: 299db4d4260ea0eacd357727418755a791cd152b642494ed15c18d029f55ea625017a6f1c398f7839e30b2d5a48cd6165e0c1f39ac1b81f863e15f056a149d54
-  languageName: node
-  linkType: hard
-
 "@babel/preset-env@npm:^7.12.11":
   version: 7.12.11
   resolution: "@babel/preset-env@npm:7.12.11"
@@ -1144,7 +1134,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4":
   version: 7.12.5
   resolution: "@babel/runtime@npm:7.12.5"
   dependencies:
@@ -2887,6 +2877,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cache-swap@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "cache-swap@npm:0.3.0"
+  dependencies:
+    graceful-fs: ^4.1.2
+    mkdirp: ^0.5.1
+    object-assign: ^4.0.1
+    rimraf: ^2.4.0
+  checksum: 8139ce93612d65f7bd2fd4503683aa7a82c90957325b84b2b58a3fc4b0c519dd6df7419c0d51e6c69c390660e72f93f1320965ecc3a4e27259f9e1663248a7be
+  languageName: node
+  linkType: hard
+
 "cacheable-request@npm:^2.1.1":
   version: 2.1.4
   resolution: "cacheable-request@npm:2.1.4"
@@ -3562,14 +3564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^2.6.5":
-  version: 2.6.12
-  resolution: "core-js@npm:2.6.12"
-  checksum: b865823ce9cb5bc63336856440f6525e4996bb91af30660081e82bf447d177f36104f0986906a34ea0c9c03cb8b3d960380848a478e2621dac30c9b8198d28da
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^3.4.1":
+"core-js@npm:3, core-js@npm:^3.4.1":
   version: 3.8.3
   resolution: "core-js@npm:3.8.3"
   checksum: 3c67d1732d505f6afaf836f18038dae8267e8c0e8e84e1c679bac67589e66d0807c24750c7d8b1118cc386c3d66a1d96f20d9cb0f6a879b19cfc04e9f073fe78
@@ -5982,6 +5977,21 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"gulp-cache@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "gulp-cache@npm:1.1.3"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+    cache-swap: ^0.3.0
+    core-js: 3
+    object.pick: ^1.3.0
+    plugin-error: ^1.0.1
+    through2: 3.0.1
+    vinyl: ^2.2.0
+  checksum: e43de497088b640c08e50c9af3938160d030bc810fd631baf56c603aa2868851281d0e9baca1c99b6d4be474a22735c5bee9ecc32960c01375ba7cf0bba97142
+  languageName: node
+  linkType: hard
+
 "gulp-clean-css@npm:^4.3.0":
   version: 4.3.0
   resolution: "gulp-clean-css@npm:4.3.0"
@@ -7615,7 +7625,6 @@ fsevents@~2.3.1:
   dependencies:
     "@babel/cli": ^7.12.10
     "@babel/core": ^7.12.10
-    "@babel/polyfill": ^7.12.1
     "@babel/preset-env": ^7.12.11
     "@babel/register": ^7.12.10
     "@flexis/favicons": ^1.5.0
@@ -7626,6 +7635,7 @@ fsevents@~2.3.1:
     eslint-plugin-html: ^6.1.1
     gulp: ^4.0.2
     gulp-babel: ^8.0.0
+    gulp-cache: ^1.1.3
     gulp-clean-css: ^4.3.0
     gulp-eslint: ^6.0.0
     gulp-favicons: ^3.0.0
@@ -10004,7 +10014,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^2.5.4, rimraf@npm:^2.6.1":
+"rimraf@npm:^2.4.0, rimraf@npm:^2.5.4, rimraf@npm:^2.6.1":
   version: 2.7.1
   resolution: "rimraf@npm:2.7.1"
   dependencies:
