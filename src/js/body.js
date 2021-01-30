@@ -2,7 +2,7 @@
 /* eslint-disable require-jsdoc */
 $(document).ready(() => {
   $('#fullScreenButton')
-      .on('click', () => {
+      .click(() => {
         if (screenfull.isEnabled) {
           screenfull.toggle();
           $('#fullscreen').removeAttribute('class');
