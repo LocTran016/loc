@@ -5,7 +5,7 @@
 /**
  * Shows the Cookie banner 
  */
-function showCookieBanner(){
+let showCookieBanner = () => {
     let cookieBanner = document.getElementsByClassName("nk-cookie-banner")[0];
     cookieBanner.style.display = "block";
 }
@@ -13,7 +13,7 @@ function showCookieBanner(){
 /**
  * Hides the Cookie banner and saves the value to localstorage
  */
-function hideCookieBanner(){
+let hideCookieBanner = () => {
     localStorage.setItem("web_dev_isCookieAccepted", "yes");
 
     let cookieBanner = document.getElementsByClassName("nk-cookie-banner")[0];
@@ -23,7 +23,7 @@ function hideCookieBanner(){
 /**
  * Checks the localstorage and shows Cookie banner based on it.
  */
-function initializeCookieBanner(){
+let initializeCookieBanner = () => {
     let isCookieAccepted = localStorage.getItem("web_dev_isCookieAccepted");
     if(isCookieAccepted === null)
     {
@@ -37,5 +37,6 @@ function initializeCookieBanner(){
 }
 
 // Assigning values to window object
-window.onload = initializeCookieBanner();
+$(document).ready(initializeCookieBanner());
+// window.onload = initializeCookieBanner();
 window.nk_hideCookieBanner = hideCookieBanner;

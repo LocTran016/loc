@@ -5,7 +5,6 @@ Reveal.initialize({
     RevealHighlight,
     RevealNotes,
     RevealSearch,
-    RevealNotes,
     RevealMath,
     RevealZoom,
   ],
