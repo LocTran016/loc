@@ -5,8 +5,8 @@ $(document).ready(() => {
       .click(() => {
         if (screenfull.isEnabled) {
           screenfull.toggle();
-          $('#fullscreen').removeAttribute('class');
-          $('#fullscreen').setAttribute('class',
+          $('#fullscreen').removeAttr('class');
+          $('#fullscreen').attr('class',
   screenfull.isFullscreen ? 'bi bi-fullscreen':'bi bi-fullscreen-exit');
         } else {
           alert('Your browser doesn\'t support full screen');

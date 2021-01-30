@@ -16,7 +16,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const lec = require('gulp-line-ending-corrector');
 const lazypipe = require('lazypipe');
 const babel = require('gulp-babel');
-const cache = require('gulp-cache');
+// const cache = require('gulp-cache');
 
 // function imgToWeBP() {
 //   return src('src/img/*.{jpg,jpeg,png,gif}')
@@ -134,4 +134,4 @@ function Fileslint() {
 
 exports.favicon = faviconICO();
 exports.develop = series(watchFiles);
-exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, compileCode);
+exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, babelTransfer, compileCode);

@@ -1,8 +1,8 @@
 /* eslint-disable linebreak-style */
 Reveal.initialize({
+  transition: 'zoom',
   hash: true,
   plugins: [
-    RevealHighlight,
     RevealNotes,
     RevealSearch,
     RevealMath,
