@@ -20,6 +20,7 @@
     "dev": "gulp develop"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
@@ -49,5 +50,8 @@
     "mobile-device-detect": "^0.4.3",
     "run-script-os": "^1.1.5",
     "terser": "^5.5.1"
+  },
+  "dependencies": {
+    "markdown-it": "^12.0.4"
   }
 }
