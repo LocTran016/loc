@@ -39,6 +39,12 @@
     <script src="js/head.min.js" defer></script>
   </head>
   <body>
+  <div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <h5 class="text-white h4">About</h5>
+    <span class="text-muted">My site used for all my presentations at school</span>
+  </div>
+</div>
     <!-- Nav -->
     <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary">
       <div class="container-fluid">
@@ -53,7 +59,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="/presents/index.html">Thuyết trình</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span>About</span>
+    </button>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
