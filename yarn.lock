@@ -8174,6 +8174,8 @@ fsevents@~2.3.1:
     gulp-webp: ^4.0.1
     lazypipe: ^1.0.2
     markdown-it: ^12.0.4
+    markdown-it-anchor: ^7.0.1
+    markdown-it-table-of-contents: ^0.5.2
     mobile-device-detect: ^0.4.3
     run-script-os: ^1.1.5
     terser: ^5.5.1
@@ -8355,6 +8357,22 @@ fsevents@~2.3.1:
   dependencies:
     object-visit: ^1.0.0
   checksum: 9e85e6d802183927229d9ad04d70a0e0c7225451994605674d3ed4e4a21f817b4d9aba42a775e98078ffe47cf67df44a50eb07f965f14afead5015c8692503bd
+  languageName: node
+  linkType: hard
+
+"markdown-it-anchor@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "markdown-it-anchor@npm:7.0.1"
+  peerDependencies:
+    markdown-it: "*"
+  checksum: 8f38d208ad1d7dddde0f1e6071de56822c06b98844438832ff7cfbdc23467dcf7c290ca2f1579b3a8211e10844b5c178759258f66d85f148022ddc00a60e6a48
+  languageName: node
+  linkType: hard
+
+"markdown-it-table-of-contents@npm:^0.5.2":
+  version: 0.5.2
+  resolution: "markdown-it-table-of-contents@npm:0.5.2"
+  checksum: 96237cfb2d25f0fb73db8c226ebc7fb1b554df31c74d18b7b0971d0baa224c3c3c6ba482ef50330facbfd8f97d756c4d6822ce8ed8442d8e8ddd6b38ecca27db
   languageName: node
   linkType: hard
 

@@ -16,7 +16,7 @@
     "lint-ci": "run-script-os",
     "lint-ci:default": "yarn lint; yarn lint --fix",
     "lint-ci:win32": "yarn lint & yarn lint --fix",
-    "build": "gulp",
+    "build": "npx @11ty/eleventy && gulp",
     "dev": "gulp develop"
   },
   "devDependencies": {
@@ -52,6 +52,8 @@
     "terser": "^5.5.1"
   },
   "dependencies": {
-    "markdown-it": "^12.0.4"
+    "markdown-it": "^12.0.4",
+    "markdown-it-anchor": "^7.0.1",
+    "markdown-it-table-of-contents": "^0.5.2"
   }
 }
