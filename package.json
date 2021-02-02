@@ -19,7 +19,8 @@
     "build": "npx @11ty/eleventy && gulp",
     "dev:11ty": "npx @11ty/eleventy --watch",
     "dev:gulp": "gulp develop",
-    "dev": "npm-run-all dev:gulp --parallel dev:11ty"
+    "dev": "npm-run-all dev:gulp --parallel dev:11ty",
+    "upgrade": "yarn set version latest"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
