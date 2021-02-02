@@ -5,6 +5,7 @@ description: This store all my presentation at my school
 img: /img/favicon.png
 cat: slide
 alt: My image
+transition: zoom
 ---
 <!DOCTYPE html>
 <html lang="vi-VN">
@@ -70,7 +71,7 @@ alt: My image
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script>
     Reveal.initialize({
-  transition: {{transition}},
+  transition: "{{transition}}",
   hash: true,
   plugins: [
     RevealNotes,
@@ -81,8 +82,5 @@ alt: My image
 });
 
     </script>
-    <!--build:js ../../js/slide-body.min.js defer -->
-    <script defer src="../../js/slide.js"></script>
-    <!-- endbuild -->
   </body>
 </html>
