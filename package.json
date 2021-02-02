@@ -17,7 +17,9 @@
     "lint-ci:default": "yarn lint; yarn lint --fix",
     "lint-ci:win32": "yarn lint & yarn lint --fix",
     "build": "npx @11ty/eleventy && gulp",
-    "dev": "gulp develop"
+    "dev:11ty": "npx @11ty/eleventy --watch",
+    "dev:gulp": "gulp develop",
+    "dev": "npm-run-all dev:gulp --parallel dev:11ty"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -48,12 +50,14 @@
     "gulp-webp": "^4.0.1",
     "lazypipe": "^1.0.2",
     "mobile-device-detect": "^0.4.3",
+    "npm-run-all": "^4.1.5",
     "run-script-os": "^1.1.5",
     "terser": "^5.5.1"
   },
   "dependencies": {
     "markdown-it": "^12.0.4",
     "markdown-it-anchor": "^7.0.1",
-    "markdown-it-table-of-contents": "^0.5.2"
+    "markdown-it-table-of-contents": "^0.5.2",
+    "moment": "^2.29.1"
   }
 }

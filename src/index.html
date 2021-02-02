@@ -38,6 +38,7 @@
     <!-- build:css /css/main.min.css defer-->
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/font.css" rel="stylesheet">
+    <link href="/css/search.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/cookie-banner.css">
     <!-- endbuild -->
     <!--build:js js/head.min.js defer-->
@@ -93,21 +94,38 @@
       </div>
     </nav>
     <!-- End -->
-    <br>
-    <div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Hello World</h1>
-    </div>
-    <div class="col">
-      <picture>
-      <source srcset="img/favicon.webp" type="image/webp">
-      <source srcset="img/favicon.jpeg" type="image/jpeg"> 
-      <img src="img/favicon.jpeg" alt="Alt Text!" class="img-fluid rounded float-end">
-    </picture>
-    </div>
+    <div style="background: url(https://res.cloudinary.com/dn4nxz7f0/image/upload/v1586247478/Ket%20hop%20CSS%20voi%20Bootstrap4/trees-on-forest-at-daytime-1083515_vlpj4d.jpg)" class="jumbotron bg-cover text-white">
+      <div class="container py-5 text-center">
+          <h1 class="display-4 font-weight-bold">Thiết Kế Header Bootstrap 4</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          <a href="#" role="button" class="btn btn-primary px-5">Tiện Ích</a>
+      </div>
   </div>
-</div>
+
+  <!-- For Demo Purpose -->
+  <div class="container py-5">
+      <h2 class="h3 font-weight-bold">Nội Dung Trang Web</h2>
+      <div class="row">
+          <div class="col-lg-10 mb-4">
+              <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+              <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+          </div>
+          <div class="col-lg-8">
+              <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacus nulla, egestas nec tempus ut, ullamcorper vel turpis. Suspendisse sed nibh faucibus, volutpat odio vitae, ornare neque. Sed at condimentum risus. Nulla elementum, tellus id consequat imperdiet, arcu est dignissim mi, et ullamcorper elit nibh quis magna. Curabitur eget fermentum diam, id tempus erat. Phasellus a ornare eros. Sed imperdiet, nunc eget placerat accumsan, quam nisl facilisis dui, a sagittis diam nunc non mi. Nulla molestie tempus elementum.</p>
+          </div>
+      </div>
+  </div>
+  <form onsubmit="submitFn(this, event);">
+    <div class="search-wrapper">
+        <div class="input-holder">
+            <input type="text" class="search-input" placeholder="Type to search" />
+            <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+        </div>
+        <span class="close" onclick="searchToggle(this, event);"></span>
+        <div class="result-container">
+        </div>
+    </div>
+</form>
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
   &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
   <a href="https://www.cookiesandyou.com/" target="blank">Learn more</a>
@@ -120,6 +138,7 @@
     <!--build:js js/body.min.js defer -->
     <script defer src="/js/body.js"></script>
     <script async src="/js/cookie-banner.js"></script>
+    <script defer src="/js/search.js"></script>
     <!-- endbuild -->
   </body>
 </html>

@@ -89,28 +89,12 @@
     </nav>
     <!-- End -->
     <br>
+    <div class="container-fluid"><span class="badge bg-success text-wrap fs-6 rounded-pill">
+    </span></div>
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-        {%-for post in collections.slide -%}
-          <div class="col">
-            <div class="card h-100">
-              <a href="{{ post.url }}" class="text-decoration-none">
-              <img src="{{ post.data.img }}" class="card-img-top" alt="{{ post.data.alt }}" />
-              <div class="card-body">
-                <h5 class="card-title">{{ post.data.title }}</h5>
-                <p class="card-text">{{ post.data.description }}</p>
-                <span class="badge bg-success text-wrap fs-6 rounded-pill">{{ post.data.tags }}</span>
-              </div>
-              <div class="card-footer">
-                  <small class="text-muted"><time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time></small>
-              </div>
-              </a>
-            </div>
-          </div>
-        {%- endfor -%}
-      </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4"></div>
     </div>
-      <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
+    <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
     &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
     <a href="https://www.cookiesandyou.com/" target="blank">Learn more</a>
     <button type="button" class="btn btn-primary btn-sm ml-3" onclick="window.nk_hideCookieBanner()">

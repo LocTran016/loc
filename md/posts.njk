@@ -38,6 +38,7 @@
       <!-- build:css ../css/main.min.css defer-->
       <link href="../css/main.css" rel="stylesheet">
       <link href="../css/font.css" rel="stylesheet">
+      <link href="../css/search.css" rel="stylesheet">
       <link rel="stylesheet" href="../css/cookie-banner.css">
       <!-- endbuild -->
       <!--build:js ../js/head.min.js defer-->
@@ -99,11 +100,11 @@
               <img src="{{ post.data.img }}" class="card-img-top" alt="{{ post.data.alt }}"/>
               <div class="card-body">
                 <h5 class="card-title">{{ post.data.title }}</h5>
-                <p class="card-text">{{ post.data.description }}</p>
+                <p class="card-text">{{ post.data.description }}{% excerpt post %}</p>
                 <span class="badge bg-success text-wrap fs-6 rounded-pill">{{ post.data.tags }}</span>
               </div>
               <div class="card-footer">
-                  <small class="text-muted">Last updated {{ page.date.toUTCString() }}</small>
+                  <small class="text-muted"><time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time></small>
               </div>
               </a>
             </div>
@@ -124,6 +125,7 @@
       <!--build:js ../js/body.min.js defer -->
       <script defer src="../js/body.js"></script>
       <script defer src="../js/cookie-banner.js"></script>
+      <script defer src="../js/search.js"></script>
       <!-- endbuild -->
     </body>
   </html>

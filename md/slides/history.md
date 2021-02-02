@@ -9,5 +9,7 @@ img: /img/favicon.png
 <section>
 # {{ title }}
 </section><section>
-__**Nani. What**__
+__**Nani. What**__<!-- Excerpt Start -->
+This is included on the homepage.
+<!-- Excerpt End -->
 </section>

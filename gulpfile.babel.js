@@ -1,8 +1,6 @@
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
-/* eslint-disable require-jsdoc */
+
 'use strict';
-const {dest, series, src, watch} = require('gulp');
+const {dest, series, src, watch,parallel} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const favicons = require('gulp-favicons');
@@ -102,7 +100,6 @@ function compileCode() {
 }
 
 function watchFiles() {
-  liveReload();
   watch('src/**/*.html', browserSync.reload);
   watch('src/**/*.js', browserSync.reload);
   watch('src/**/*.css', browserSync.reload);
@@ -133,5 +130,5 @@ function Fileslint() {
 }
 
 exports.favicon = faviconICO();
-exports.develop = series(watchFiles);
+exports.develop = parallel(liveReload,watchFiles);
 exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, babelTransfer, compileCode);
