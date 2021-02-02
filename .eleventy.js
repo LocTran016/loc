@@ -25,9 +25,9 @@ module.exports = function(eleventyConfig) {
   .use(mdItBracketedSpan);
   /************** MARKDOWN ******************/
 
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
 
   eleventyConfig.addCollection("presents", function(collection) {
     return collection.getFilteredByGlob('**/*.md').sort((a,b) => {
