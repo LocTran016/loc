@@ -19,7 +19,7 @@ const sass = require('gulp-sass')
 function sassToCss() {
   return src('public/css/*.scss')
          .pipe(sass())
-         .pipe(dest('src/css/'))
+         .pipe(dest('public/css/'))
          .pipe(browserSync.reload({
           stream: true
         }));
