@@ -88,14 +88,15 @@
     </nav>
     <!-- End -->
     <br>
+    {% if i == 0 and not hideFirst %}...{% endif %}
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
         {%-for post in collections.all -%}
-        {%-if post.data.cat !=== "slide" -%}
+        {%-if post.data.cat !== slide -%}
           <div class="col">
             <div class="card h-100">
               <a href="{{ post.url }}" class="text-decoration-none">
-              <img src="{{ post.data.img }}" class="card-img-top" />
+              <img src="{{ post.data.img }}" class="card-img-top" alt="{{ post.data.alt }}"/>
               <div class="card-body">
                 <h5 class="card-title">{{ post.data.title }}</h5>
                 <p class="card-text">{{ post.data.description }}</p>
