@@ -1,8 +1,6 @@
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
-/* eslint-disable require-jsdoc */
+
 'use strict';
-const {dest, series, src, watch} = require('gulp');
+const {dest, series, src, watch,parallel} = require('gulp');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const favicons = require('gulp-favicons');
@@ -16,30 +14,24 @@ const sourcemaps = require('gulp-sourcemaps');
 const lec = require('gulp-line-ending-corrector');
 const lazypipe = require('lazypipe');
 const babel = require('gulp-babel');
-// const cache = require('gulp-cache');
+const sass = require('gulp-sass')
 
-// function imgToWeBP() {
-//   return src('src/img/*.{jpg,jpeg,png,gif}')
-//       .pipe(cache(webp()))
-//       .pipe(dest('public/img/'));
-// }
-
-// function minImg() {
-//   return src('src/img/*.{jpg,jpeg,png,gif}')
-//       .pipe(cache(imagemin({
-//         verbose: true,
-//       })))
-//       .pipe(dest('public/img/'));
-// }
-
+function sassToCss() {
+  return src('public/css/*.scss')
+         .pipe(sass())
+         .pipe(dest('src/css/'))
+         .pipe(browserSync.reload({
+          stream: true
+        }));
+}
 function imgToWeBP() {
-  return src('src/img/*.{jpg,jpeg,png}')
+  return src('public/img/*.{jpg,jpeg,png}')
       .pipe(webp())
       .pipe(dest('public/img/'));
 }
 
 function minImg() {
-  return src('src/img/*.{jpg,jpeg,png,gif,svg}')
+  return src('public/img/*.{jpg,jpeg,png,gif,svg}')
       .pipe(imagemin({
         verbose: true,
       }))
@@ -47,7 +39,7 @@ function minImg() {
 }
 
 function faviconICO() {
-  return src('src/img/favicon.{jpg,jpeg,png,gif}')
+  return src('public/img/favicon.{jpg,jpeg,png,gif}')
       .pipe(
           favicons({
             appName: 'LocTran016 - All my presentation',
@@ -73,19 +65,19 @@ function faviconICO() {
 }
 
 function babelTransfer() {
-  return src('src/js/*.js')
+  return src('public/js/*.js')
       .pipe(babel())
-      .pipe(dest('src/js/'));
+      .pipe(dest('public/js/'));
 }
 
 function lineEndingFix() {
-  return src(['src/**/*.html'])
+  return src(['public/**/*.html'])
       .pipe(lec({eolc: 'CRLF'}))
-      .pipe(dest('./src/'));
+      .pipe(dest('./public/'));
 };
 
 function compileCode() {
-  return src(['src/**/*.html'])
+  return src(['public/**/*.html'])
       .pipe(useref({}, lazypipe().pipe(sourcemaps.init, {loadMaps: true})))
       .pipe(sourcemaps.write('maps'))
       .pipe(gulpIf('*.js', terser({
@@ -102,23 +94,23 @@ function compileCode() {
 }
 
 function watchFiles() {
-  liveReload();
-  watch('src/**/*.html', browserSync.reload);
-  watch('src/**/*.js', browserSync.reload);
-  watch('src/**/*.css', browserSync.reload);
-  watch('src/img/*.{jpg,jpeg,png,gif}', browserSync.reload);
+  watch('public/**/*.html', browserSync.reload);
+  watch('public/**/*.scss', sassToCss());
+  watch('public/**/*.js', browserSync.reload);
+  watch('public/**/*.css', browserSync.reload);
+  watch('public/img/*.{jpg,jpeg,png,gif}', browserSync.reload);
 }
 
 function liveReload() {
   browserSync.init({
     server: {
-      baseDir: 'src',
+      baseDir: 'public',
     },
   });
 }
 
 function Fileslint() {
-  return src('./src/')
+  return src('./public/')
       .pipe(eslint({
         fix: true,
         useEslintrc: true,
@@ -133,5 +125,5 @@ function Fileslint() {
 }
 
 exports.favicon = faviconICO();
-exports.develop = series(watchFiles);
-exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, babelTransfer, compileCode);
+exports.develop = parallel(liveReload,watchFiles);
+exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, babelTransfer, sassToCss, compileCode);

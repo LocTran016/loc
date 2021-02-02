@@ -1,14 +1,23 @@
+---
+title: My Blog
+author: LocTran016
+description: This store all my presentation at my school
+img: /img/favicon.png
+tags: [ post ]
+alt: My imgage
+---
+
 <!DOCTYPE html>
 <html lang="vi-VN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="LocTran016" />
-    <meta name="description" content="This store all my presentation at my school" />
-    <meta property="og:description" content="All my presentations is here!" />
-    <meta property="og:image" content="img/favicon.jpeg" />
-    <meta name="twitter:title" content="LocTran016">
-    <title>LocTran016</title>
+    <meta name="author" content="{{ author }}" />
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="{{ img }}" />
+    <meta name="twitter:title" content="{{ title }}">
+    <title>{{ title }}</title>
     <link rel="manifest" href="/manifest.webapp">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -21,7 +30,6 @@
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="shortcut icon" type="image/jpg" href="img/favicon.jpeg"/>
     <!-- External -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
@@ -35,22 +43,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
     <!-- end -->
-    <!-- build:css /css/main.min.css defer-->
-    <link href="/css/main.css" rel="stylesheet">
-    <link href="/css/font.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/cookie-banner.css">
+    <!-- build:css ../../css/main.min.css defer-->
+    <link href="../../css/main.css" rel="stylesheet">
+    <link href="../../css/font.css" rel="stylesheet">
+    <link href="../../css/search.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/cookie-banner.css">
     <!-- endbuild -->
-    <!--build:js js/head.min.js defer-->
-    <script src="/js/head.js"></script>
+    <!--build:js ../../js/head.min.js defer-->
+    <script src="../../js/head.js"></script>
     <!-- endbuild -->
   </head>
   <body>
-  <div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-    <h5 class="text-white h4">About</h5>
-    <span class="text-muted">My site used for all my presentations at school</span>
-  </div>
-</div>
     <!-- Nav -->
     <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary">
       <div class="container-fluid">
@@ -64,9 +67,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span>About</span>
     </button>
             </li>
             <li class="nav-item dropdown">
@@ -97,20 +97,7 @@
     </nav>
     <!-- End -->
     <br>
-    <div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Hello World</h1>
-    </div>
-    <div class="col">
-      <picture>
-      <source srcset="img/favicon.webp" type="image/webp">
-      <source srcset="img/favicon.jpeg" type="image/jpeg"> 
-      <img src="img/favicon.jpeg" alt="Alt Text!" class="img-fluid rounded float-end">
-    </picture>
-    </div>
-  </div>
-</div>
+    {{ content | safe }}
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
   &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
   <a href="https://www.cookiesandyou.com/" target="blank">Learn more</a>
@@ -118,11 +105,21 @@
     I Got It
   </button>
 </div>
+<span class="badge bg-success text-wrap fs-6 rounded-pill">{{ post.data.tags }}</span>
+<script src="https://utteranc.es/client.js"
+        repo="loctran016/comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        label="Comments :tada: :tada: :tada:"
+        async>
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/5.1.0/screenfull.min.js" integrity="sha512-SGPHIoS+NsP1NUL5RohNpDs44JlF36tXLN6H3Cw+EUyenEc5zPXWqfw9D+xmvR00QYUYewQIJQ6P5yH82Vw6Fg==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <!--build:js js/body.min.js defer -->
-    <script defer src="/js/body.js"></script>
-    <script async src="/js/cookie-banner.js"></script>
+    <!--build:js ../../js/body.min.js defer -->
+    <script defer src="../../js/body.js"></script>
+    <script async src="../../js/cookie-banner.js"></script>
+    <script defer src="../../js/search.js"></script>
     <!-- endbuild -->
   </body>
 </html>

@@ -30,3 +30,11 @@ jobs:
           BRANCH: gh-pages
           FOLDER: public
           CLEAN: true
+      - name: Test 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        if: ${{ github.ref == 'refs/heads/11ty'}}
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: dev
+          FOLDER: public
+          CLEAN: true
