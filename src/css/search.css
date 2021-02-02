@@ -1,26 +1,15 @@
-html,body {
-    height: 100%;
-}
-body {
-    padding: 0px;
-    margin:0px;
-    background-position: center;
-    background-size: cover; background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-color: aqua;
-}
-
-.search-wrapper {
-    position: absolute;
+#search-wrapper {
+    position: relative;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     top:50%;
     left:50%;
+    right: 50%;
 }
-.search-wrapper.active {}
+#search-wrapper.active {}
 
-.search-wrapper .input-holder {
+#search-wrapper #input-holder {
     overflow: hidden;
     height: 70px;
     background: rgba(255,255,255,0);
@@ -31,7 +20,7 @@ body {
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.search-wrapper.active .input-holder {
+#search-wrapper.active #input-holder {
     border-radius: 50px;
     width:450px;
     background: rgba(34, 215, 228, 0.5);
@@ -40,7 +29,7 @@ body {
     transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
 }
 
-.search-wrapper .input-holder .search-input {
+#search-wrapper #input-holder #search-input {
     width:100%;
     height: 50px;
     padding:0px 70px 0 20px;
@@ -70,14 +59,14 @@ body {
     -moz-transition-delay: 0.3s;
     transition-delay: 0.3s;
 }
-.search-wrapper.active .input-holder .search-input {
+#search-wrapper.active #input-holder #search-input {
     opacity: 1;
     -webkit-transform: translate(0, 10px);
     -moz-transform: translate(0, 10px);
     transform: translate(0, 10px);
 }
 
-.search-wrapper .input-holder .search-icon {
+#search-wrapper #input-holder #search-icon {
     width:70px;
     height:70px;
     border:none;
@@ -93,53 +82,56 @@ body {
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.search-wrapper.active .input-holder .search-icon {
+#search-wrapper.active #input-holder #search-icon {
     width: 50px;
     height:50px;
     margin: 10px;
     border-radius: 30px;
 }
-.search-wrapper .input-holder .search-icon span {
-    width:22px;
-    height:22px;
-    display: inline-block;
-    vertical-align: middle;
-    position:relative;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
-    -webkit-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
-    -moz-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
-    transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+#search-wrapper #input-holder #search-icon span {
+    width:22px ;
+    height:22px ;
+    display: inline-block ;
+    vertical-align: middle ;
+    position:relative ;
+    -webkit-transform: rotate(45deg) ;
+    -moz-transform: rotate(45deg) ;
+    transform: rotate(45deg) ;
+    -webkit-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650) ;
+    -moz-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650) ;
+    transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650) ;
 
 }
-.search-wrapper.active .input-holder .search-icon span {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+#search-wrapper.active #input-holder #search-icon span {
+    -webkit-transform: rotate(-45deg) ;
+    -moz-transform: rotate(-45deg) ;
+    transform: rotate(-45deg) ;
 }
-.search-wrapper .input-holder .search-icon span::before, .search-wrapper .input-holder .search-icon span::after {
-    position: absolute;
-    content:'';
+#search-wrapper #input-holder #search-icon span::before, #search-wrapper #input-holder #search-icon span::after {
+    position: absolute ;
+    content:'' ;
+    box-sizing: content-box !important;
 }
-.search-wrapper .input-holder .search-icon span::before {
+#search-wrapper #input-holder #search-icon span::before {
     width: 4px;
     height: 11px;
     left: 9px;
     top: 18px;
-    border-radius: 2px;
-    background: aqua;
+    border-radius: 2px ;
+    background: aqua ;
+    box-sizing: content-box !important;
 }
-.search-wrapper .input-holder .search-icon span::after {
-    width: 14px;
-    height: 14px;
-    left: 0px;
-    top: 0px;
-    border-radius: 16px;
-    border: 4px solid aqua;
+#search-wrapper #input-holder #search-icon span::after {
+    width: 14px ;
+    height: 14px ;
+    left: 0px ;
+    top: 0px ;
+    border-radius: 16px ;
+    border: 4px solid aqua ;
 }
 
-.search-wrapper .close {
+
+#search-wrapper #close {
     position: absolute;
     z-index: 1;
     top:24px;
@@ -157,7 +149,7 @@ body {
     -moz-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
-.search-wrapper.active .close {
+#search-wrapper.active #close {
     right:-50px;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -169,25 +161,27 @@ body {
     -moz-transition-delay: 0.5s;
     transition-delay: 0.5s;
 }
-.search-wrapper .close::before, .search-wrapper .close::after {
+#search-wrapper #close::before, #search-wrapper #close::after {
     position:absolute;
     content:'';
     background: #FFF;
     border-radius: 2px;
+    box-sizing: content-box !important;
 }
-.search-wrapper .close::before {
+#search-wrapper #close::before {
     width: 5px;
     height: 25px;
     left: 10px;
     top: 0px;
+    box-sizing: content-box !important;
 }
-.search-wrapper .close::after {
+#search-wrapper #close::after {
     width: 25px;
     height: 5px;
     left: 0px;
     top: 10px;
 }
-.search-wrapper .result-container {
+#search-wrapper #result-container {
     width: 100%;
     position: absolute;
     top:80px;
@@ -201,5 +195,5 @@ body {
 
 
 @media screen and (max-width: 560px) {
-    .search-wrapper.active .input-holder {width:200px;}
+    #search-wrapper.active #input-holder {width:200px;}
 }

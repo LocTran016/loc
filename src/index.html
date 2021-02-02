@@ -101,10 +101,21 @@
           <a href="#" role="button" class="btn btn-primary px-5">Tiện Ích</a>
       </div>
   </div>
-
   <!-- For Demo Purpose -->
   <div class="container py-5">
       <h2 class="h3 font-weight-bold">Nội Dung Trang Web</h2>
+      <div class="d-flex justify-content-center">
+      <form onsubmit="submitFn(this, event);">
+        <div id="search-wrapper">
+            <div id="input-holder">
+                <input type="text" class="form-control me-2" id="search-input" placeholder="Type to search" />
+                <button  class="btn" id="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+            </div>
+            <span id="close" onclick="searchToggle(this, event);"></span>
+            <div id="result-container">
+            </div>
+        </div>
+    </form></div><br>
       <div class="row">
           <div class="col-lg-10 mb-4">
               <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
@@ -115,17 +126,6 @@
           </div>
       </div>
   </div>
-  <form onsubmit="submitFn(this, event);">
-    <div class="search-wrapper">
-        <div class="input-holder">
-            <input type="text" class="search-input" placeholder="Type to search" />
-            <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-        </div>
-        <span class="close" onclick="searchToggle(this, event);"></span>
-        <div class="result-container">
-        </div>
-    </div>
-</form>
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
   &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
   <a href="https://www.cookiesandyou.com/" target="blank">Learn more</a>

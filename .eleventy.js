@@ -3,23 +3,31 @@ const moment = require('moment');
 moment.locale('vi');
 module.exports = function(eleventyConfig) {
     var markdownIt = require("markdown-it");
-    var markdownItAnchor = require('markdown-it-anchor');
-    var markdownItToc = require('markdown-it-table-of-contents');
+    var mdItAnchor = require('markdown-it-anchor');
+    var mdItToc = require('markdown-it-table-of-contents');
+    var mdItAttrs = require('markdown-it-attrs')
+    var mdItBracketedSpan= require('markdown-it-bracketed-spans')
     /************** MARKDOWN ******************/
     let mdIt = markdownIt({
 		html: true,
 		breaks: true,
 		linkify: true
 	})
-	.use(markdownItAnchor, {
+	.use(mdItAnchor, {
 		permalink: true,
 		permalinkBefore: false,
 		permalinkClass: "direct-link",
 		permalinkSymbol: "#",
 		level: [1,2,3,4]
 	})
-  .use(markdownItToc);
+  .use(mdItToc)
+  .use(mdItAttrs)
+  .use(mdItBracketedSpan);
   /************** MARKDOWN ******************/
+
+  eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
 
   eleventyConfig.addCollection("presents", function(collection) {
     return collection.getFilteredByGlob('**/*.md').sort((a,b) => {
@@ -44,8 +52,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('slide', 'slide.njk');
     return {
       dir: {
-        input: "md",
-        output: "src/",
+        input: "src",
+        output: "public",
         layouts: "_layouts"
       }
     };
