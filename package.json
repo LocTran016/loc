@@ -17,6 +17,7 @@
     "lint-ci:default": "yarn lint; yarn lint --fix",
     "lint-ci:win32": "yarn lint & yarn lint --fix",
     "build": "npx @11ty/eleventy && gulp",
+    "build:11ty": "npx @11ty/eleventy",
     "dev:11ty": "npx @11ty/eleventy --watch",
     "dev:gulp": "gulp develop",
     "dev": "npm-run-all dev:gulp --parallel dev:11ty",

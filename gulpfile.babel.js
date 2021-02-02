@@ -64,11 +64,11 @@ function faviconICO() {
       .pipe(dest('public/'));
 }
 
-function babelTransfer() {
-  return src('public/js/*.js')
-      .pipe(babel())
-      .pipe(dest('public/js/'));
-}
+// function babelTransfer() {
+//   return src('public/js/*.js')
+//       .pipe(babel())
+//       .pipe(dest('public/js/'));
+// }
 
 function lineEndingFix() {
   return src(['public/**/*.html'])
@@ -126,4 +126,4 @@ function Fileslint() {
 
 exports.favicon = faviconICO();
 exports.develop = parallel(liveReload,watchFiles);
-exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, babelTransfer, sassToCss, compileCode);
+exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, /*babelTransfer,*/ sassToCss, compileCode);
