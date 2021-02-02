@@ -25,13 +25,13 @@ function sassToCss() {
         }));
 }
 function imgToWeBP() {
-  return src('public/img/*.{jpg,jpeg,png}')
+  return src('_site/img/*.{jpg,jpeg,png}')
       .pipe(webp())
       .pipe(dest('public/img/'));
 }
 
 function minImg() {
-  return src('public/img/*.{jpg,jpeg,png,gif,svg}')
+  return src('_site/img/*.{jpg,jpeg,png,gif,svg}')
       .pipe(imagemin({
         verbose: true,
       }))
@@ -39,7 +39,7 @@ function minImg() {
 }
 
 function faviconICO() {
-  return src('public/img/favicon.{jpg,jpeg,png,gif}')
+  return src('_site/img/favicon.{jpg,jpeg,png,gif}')
       .pipe(
           favicons({
             appName: 'LocTran016 - All my presentation',
@@ -71,13 +71,13 @@ function faviconICO() {
 // }
 
 function lineEndingFix() {
-  return src(['public/**/*.html'])
+  return src(['_site/**/*.html'])
       .pipe(lec({eolc: 'CRLF'}))
       .pipe(dest('./public/'));
 };
 
 function compileCode() {
-  return src(['public/**/*.html'])
+  return src(['_site/**/*.html'])
       .pipe(useref({}, lazypipe().pipe(sourcemaps.init, {loadMaps: true})))
       .pipe(sourcemaps.write('maps'))
       .pipe(gulpIf('*.js', terser({
@@ -94,23 +94,23 @@ function compileCode() {
 }
 
 function watchFiles() {
-  watch('public/**/*.html', browserSync.reload);
-  watch('public/**/*.scss', sassToCss());
-  watch('public/**/*.js', browserSync.reload);
-  watch('public/**/*.css', browserSync.reload);
-  watch('public/img/*.{jpg,jpeg,png,gif}', browserSync.reload);
+  watch('_site/**/*.html', browserSync.reload);
+  watch('_site/**/*.scss', sassToCss());
+  watch('_site/**/*.js', browserSync.reload);
+  watch('_site/**/*.css', browserSync.reload);
+  watch('_site/img/*.{jpg,jpeg,png,gif}', browserSync.reload);
 }
 
 function liveReload() {
   browserSync.init({
     server: {
-      baseDir: 'public',
+      baseDir: '_site',
     },
   });
 }
 
 function Fileslint() {
-  return src('./public/')
+  return src('./_site/')
       .pipe(eslint({
         fix: true,
         useEslintrc: true,

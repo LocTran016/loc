@@ -28,7 +28,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: 11ty
-          FOLDER: public
+          FOLDER: _site
           CLEAN: true
       - name: Build (gulp) 📄 
         run: yarn build:gulp
