@@ -100,7 +100,7 @@
               <img src="{{ post.data.img }}" class="card-img-top" alt="{{ post.data.alt }}"/>
               <div class="card-body">
                 <h5 class="card-title">{{ post.data.title }}</h5>
-                <p class="card-text">{{ post.data.description }}{% excerpt post %}</p>
+                <p class="card-text">{{ post.data.description }}<br>{% excerpt post %}</p>
                 <span class="badge bg-success text-wrap fs-6 rounded-pill">{{ post.data.tags }}</span>
               </div>
               <div class="card-footer">

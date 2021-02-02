@@ -56,7 +56,7 @@ function faviconICO() {
             start_url: '/?homescreen=1',
             version: 1.0,
             logging: false,
-            html: 'index.html',
+            html: 'favicon.html',
             pipeHTML: true,
             replace: true,
           })
