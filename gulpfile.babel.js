@@ -14,10 +14,12 @@ const sourcemaps = require('gulp-sourcemaps');
 const lec = require('gulp-line-ending-corrector');
 const lazypipe = require('lazypipe');
 const babel = require('gulp-babel');
-const sass = require('gulp-sass')
+const sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var concatCss = require('gulp-concat-css');
 
 function sassToCss() {
-  return src('public/css/*.scss')
+  return src('_site/css/*.scss')
          .pipe(sass())
          .pipe(dest('public/css/'))
          .pipe(browserSync.reload({
@@ -64,33 +66,51 @@ function faviconICO() {
       .pipe(dest('public/'));
 }
 
-// function babelTransfer() {
-//   return src('public/js/*.js')
-//       .pipe(babel())
-//       .pipe(dest('public/js/'));
+function babelTransfer() {
+  return src('public/js/*.min.js')
+      .pipe(babel())
+      .pipe(dest('public/js/'));
+}
+
+function minifyCode() {
+  return src('puplic/')
+  .pipe(gulpIf('*.min.js', terser({
+    module: true,
+    ecma: 2015,
+  })))
+  .pipe(gulpIf('*.min.css', cleanCSS({debug: true}, (details) => {
+    console.log(`${details.name}: ${details.stats.originalSize}`);
+    console.log(`${details.name}: ${details.stats.minifiedSize}`);
+    console.log(`${details.name}: ${details.errors}`);
+    console.log(`${details.name}: ${details.warnings}`);
+  })))
+}
+
+// function compileCode() {
+//   return src('_site/**/*.html')
+//       .pipe(useref({base:'public/'}, lazypipe().pipe(sourcemaps.init, {loadMaps: true})))
+//       .pipe(sourcemaps.write('maps'))
+//       .pipe(dest('public/'))
+//       .pipe(browserSync.reload({
+//         stream: true
+//       }));
 // }
 
-function lineEndingFix() {
-  return src(['_site/**/*.html'])
-      .pipe(lec({eolc: 'CRLF'}))
-      .pipe(dest('./public/'));
-};
-
-function compileCode() {
-  return src(['_site/**/*.html'])
-      .pipe(useref({}, lazypipe().pipe(sourcemaps.init, {loadMaps: true})))
-      .pipe(sourcemaps.write('maps'))
-      .pipe(gulpIf('*.js', terser({
-        module: true,
-        ecma: 2015,
-      })))
-      .pipe(gulpIf('*.css', cleanCSS({debug: true}, (details) => {
-        console.log(`${details.name}: ${details.stats.originalSize}`);
-        console.log(`${details.name}: ${details.stats.minifiedSize}`);
-        console.log(`${details.name}: ${details.errors}`);
-        console.log(`${details.name}: ${details.warnings}`);
-      })))
-      .pipe(dest('public/'));
+function concatCode() {
+  return src('_site/js/body/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('js/body.js'))
+      .pipe(src('_site/js/head/*.js'))
+      .pipe(concat('js/head.js'))
+      .pipe(src('_site/css/*.css'))
+      .pipe(concatCss('css/main.css'))
+      .pipe(gulpIf('*.js',rename({ extname: '.min.js' })))
+      .pipe(gulpIf('*.css',rename({ extname: '.min.css' })))
+      .pipe(sourcemaps.write())
+      .pipe(dest('public/'))
+      .pipe(browserSync.reload({
+        stream: true
+      }));
 }
 
 function watchFiles() {
@@ -126,4 +146,5 @@ function Fileslint() {
 
 exports.favicon = faviconICO();
 exports.develop = parallel(liveReload,watchFiles);
-exports.default = series(Fileslint, imgToWeBP, minImg, lineEndingFix, /*babelTransfer,*/ sassToCss, compileCode);
+exports.default = series(Fileslint, imgToWeBP, minImg, sassToCss,  concatCode, 
+  minifyCode, babelTransfer);

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /*
 * Javascript to show and hide cookie banner using localstroage
 */

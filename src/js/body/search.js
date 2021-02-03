@@ -1,6 +1,5 @@
-function searchToggle(obj, evt) {
+const searchToggle = (obj, evt) => {
   const container = $(obj).closest('#search-wrapper');
-
   if (!container.hasClass('active')) {
     container.addClass('active');
     evt.preventDefault();
@@ -10,24 +9,20 @@ function searchToggle(obj, evt) {
     // clear input
     container.find('#search-input').val('');
     // clear and hide result container when we press close
-    container.find('#result-container').fadeOut(100, function() {
+    container.find('#result-container').fadeOut(100, () => {
       $(this).empty();
     });
   }
 }
-
-function submitFn(obj, evt) {
+const submitFn = (obj, evt) => {
   value = $(obj).find('#search-input').val().trim();
-
   _html = 'Searching for: ';
   if (!value.length) {
     _html = 'Ehem, I can\'t search nothing';
   } else {
     _html += '<b>' + value + '</b>';
   }
-
   $(obj).find('#result-container').html('<span>' + _html + '</span>');
   $(obj).find('#result-container').fadeIn(100);
-
   evt.preventDefault();
 }
