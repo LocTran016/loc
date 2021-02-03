@@ -76,7 +76,7 @@ function babelTransfer() {
 function minifyHtml(){
   return src('_site/**/*.html')
     .pipe(htmlmin({}))
-    .pipe(dest('dist'));
+    .pipe(dest('public/'));
 }
 
 function minifyCode() {

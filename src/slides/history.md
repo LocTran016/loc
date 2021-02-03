@@ -5,11 +5,12 @@ author: LocTran016
 description: Thuyết trình Hoá học
 img: /img/favicon.png
 ---
-
-<section>
-# {{ title }}
-</section><section>
-__**Nani. What**__<!-- Excerpt Start -->
+## {{ title }}
+A paragraph with some text and a [link](http://hakim.se).
+<!-- Excerpt Start -->
 This is included on the homepage.
 <!-- Excerpt End -->
-</section>
+---
+## Slide 2
+---
+## Slide 3
