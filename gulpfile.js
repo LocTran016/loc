@@ -170,4 +170,4 @@ function Fileslint() {
 exports.favicon = faviconICO();
 exports.develop = parallel(liveReload,watchFiles);
 exports.default = series(Fileslint, imgToWeBP, minImg, sassToCss,  concatBody, concatHead, concatCSS,
-  minifyCode, babelTransfer, minifyHtml);
+  minifyCode, minifyHtml);
