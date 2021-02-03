@@ -18,6 +18,7 @@ const sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 const rename = require('gulp-rename');
+const htmlmin = require('gulp-htmlmin');
 
 function sassToCss() {
   return src('_site/css/*.scss')
@@ -71,6 +72,11 @@ function babelTransfer() {
   return src('public/js/*.min.js')
       .pipe(babel())
       .pipe(dest('public/js/'));
+}
+function minifyHtml(){
+  return src('_site/**/*.html')
+    .pipe(htmlmin({}))
+    .pipe(dest('dist'));
 }
 
 function minifyCode() {
@@ -164,4 +170,4 @@ function Fileslint() {
 exports.favicon = faviconICO();
 exports.develop = parallel(liveReload,watchFiles);
 exports.default = series(Fileslint, imgToWeBP, minImg, sassToCss,  concatBody, concatHead, concatCSS,
-  minifyCode, babelTransfer);
+  minifyCode, babelTransfer, minifyHtml);
