@@ -99,10 +99,10 @@ function minifyCode() {
 function concatBody() {
   return src('_site/js/body/*.js')
       .pipe(sourcemaps.init())
-      .pipe(concat('js/body.js'))
+      .pipe(concat('body.js'))
       .pipe(rename({ extname: '.min.js' }))
       .pipe(sourcemaps.write())
-      .pipe(dest('public/'))
+      .pipe(dest('public/js/'))
       .pipe(browserSync.reload({
         stream: true
       }));     
@@ -110,10 +110,10 @@ function concatBody() {
 function concatHead() {
   return src('_site/js/hesad/*.js')
       .pipe(sourcemaps.init())
-      .pipe(concat('js/head.js'))
+      .pipe(concat('head.js'))
       .pipe(rename({ extname: '.min.js' }))
       .pipe(sourcemaps.write())
-      .pipe(dest('public/')) 
+      .pipe(dest('public/js/')) 
       .pipe(browserSync.reload({
         stream: true
       }));
@@ -121,10 +121,10 @@ function concatHead() {
 function concatCSS() {
   return src('_site/css/*.css')
       .pipe(sourcemaps.init())
-      .pipe(concat('css/main.js'))
+      .pipe(concat('main.css'))
       .pipe(rename({ extname: '.min.js' }))
       .pipe(sourcemaps.write())
-      .pipe(dest('public/'))
+      .pipe(dest('public/css/'))
        .pipe(browserSync.reload({
         stream: true
       }));
