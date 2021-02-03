@@ -4245,7 +4245,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1":
+"debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1":
   version: 4.3.2
   resolution: "debug@npm:4.3.2"
   dependencies:
@@ -8589,6 +8589,7 @@ fsevents@~2.3.1:
     "@babel/register": ^7.12.10
     "@flexis/favicons": ^1.5.0
     browser-sync: ^2.26.14
+    debug: ^4.3.1
     eslint: ^7.17.0
     eslint-config-google: ^0.14.0
     eslint-plugin-css-modules: ^2.11.0
