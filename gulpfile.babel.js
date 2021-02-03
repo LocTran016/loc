@@ -17,6 +17,7 @@ const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
+const rename = require('gulp-rename');
 
 function sassToCss() {
   return src('_site/css/*.scss')

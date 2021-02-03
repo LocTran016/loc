@@ -1,0 +1,38 @@
+<div id="site-search">
+  <h4><span class="underline--magical">Search</span></h4>
+  <div class="search-flex">
+    <form id="search-form" name="searchForm" role="form" onsubmit="return false">
+      <div class="search-wrapper">
+        <div class="search-container">
+          <i class="fa fa-search"></i>
+          <input autocomplete="off" placeholder="" id="search" class="search-input" aria-label="Search site" type="text" name="q">
+        </div>
+        <div class="search-error hide-element"><span class="search-error-message"></span></div>
+      </div>
+    </form>
+    <button id="clear-search-results-sidebar" class="button clear-search-results hide-element">Clear Search Results</button>
+  </div>
+</div>
+<section class="search-results hide-element">
+    <div id="search-header">
+      <div class="search-query search-query-left">search term: <span id="query"></span></div>
+      <div class="search-query search-query-right"><span id="results-count"></span><span id="results-count-text"></span></div>
+    </div>
+    <button id="clear-search-results-mobile" class="button clear-search-results">Clear Search Results</button>
+    <ul></ul>
+  </section>
+  
+
+<form onsubmit="submitFn(this, event);" id="search-form">
+    <div id="search-wrapper">
+        <div id="input-holder">
+            <input type="text" class="form-control me-2" id="search-input" placeholder="Type to search" />
+            <button  class="btn" id="search-icon" onclick="searchToggle(this, event);"><span id="search-icon"></span></button>
+        </div>
+        <span id="close" onclick="searchToggle(this, event);"></span>
+        <div id="result-container">
+            <ul></ul>
+            <span id="results-count"></span><span id="results-count-text"></span></div>
+        </div>
+    </div>
+</form>

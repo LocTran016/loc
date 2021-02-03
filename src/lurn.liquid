@@ -5,7 +5,7 @@ permalink: /index.json
 {% for present in collections.presents %}
 {
    "title":"{{present.data.title}}",
-   "url":"{{present.url}}",
+   "href":"{{present.url}}",
    "excerpt":"{% excerpt present %}",
    "content": "{{ present.data.templateContent }}"
 } {% if forloop.last == false %},{% endif %}

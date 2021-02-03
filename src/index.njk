@@ -106,16 +106,19 @@
       <h2 class="h3 font-weight-bold">Nội Dung Trang Web</h2>
       <div class="d-flex justify-content-center">
       <form onsubmit="submitFn(this, event);">
-        <div id="search-wrapper">
-            <div id="input-holder">
-                <input type="text" class="form-control me-2" id="search-input" placeholder="Type to search" />
-                <button  class="btn" id="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-            </div>
-            <span id="close" onclick="searchToggle(this, event);"></span>
-            <div id="result-container">
-            </div>
+<form onsubmit="submitFn(this, event);" id="search-form">
+    <div id="search-wrapper">
+        <div id="input-holder">
+            <input type="text" class="form-control me-2" id="search-input" placeholder="Type to search" />
+            <button  class="btn" id="search-icon" onclick="searchToggle(this, event);"><span id="search-icon"></span></button>
         </div>
-    </form></div><br>
+        <span id="close" onclick="searchToggle(this, event);"></span>
+        <div id="result-container">
+            <ul></ul>
+            <span id="results-count"></span><span id="results-count-text"></span></div>
+        </div>
+    </div>
+</form></div><br>
       <div class="row">
           <div class="col-lg-10 mb-4">
               <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
