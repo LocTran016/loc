@@ -1,5 +1,4 @@
 let pagesIndex, searchIndex;
-let pagesIndex, searchIndex
 
 const MAX_SUMMARY_LENGTH = 200
 

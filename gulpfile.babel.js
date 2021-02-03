@@ -74,7 +74,7 @@ function babelTransfer() {
 }
 
 function minifyCode() {
-  return src('puplic/')
+  return src(['puplic/**/*.js','public/**/*.css'])
   .pipe(gulpIf('*.min.js', terser({
     module: true,
     ecma: 2015,
@@ -121,7 +121,7 @@ function concatHead() {
 function concatCSS() {
   return src('_site/css/*.css')
       .pipe(sourcemaps.init())
-      .pipe(concat('main.css'))
+      .pipe(concatCss('main.css'))
       .pipe(rename({ extname: '.min.js' }))
       .pipe(sourcemaps.write())
       .pipe(dest('public/css/'))
