@@ -17,7 +17,7 @@ const searchToggle = (obj, evt) => {
     });
   }
 }
-const submitFn = (obj, evt) => {
+/* const submitFn = (obj, evt) => {
   value = $(obj).find('#search-input').val().trim().toLowerCase();
   _html = 'Searching for: ';
   if (!value.length) {
@@ -28,4 +28,4 @@ const submitFn = (obj, evt) => {
   $(obj).find('#result-container').html('<span>' + _html + '</span>');
   $(obj).find('#result-container').fadeIn(100);
   evt.preventDefault();
-}
+} */
