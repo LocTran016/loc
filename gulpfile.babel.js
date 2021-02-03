@@ -128,7 +128,7 @@ function concatCSS() {
   return src('_site/css/*.css')
       .pipe(sourcemaps.init())
       .pipe(concatCss('main.css'))
-      .pipe(rename({ extname: '.min.js' }))
+      .pipe(rename({ extname: '.min.css' }))
       .pipe(sourcemaps.write())
       .pipe(dest('public/css/'))
        .pipe(browserSync.reload({
