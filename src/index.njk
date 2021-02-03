@@ -34,16 +34,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
-    <!-- end -->
-    <!-- build:css css/main.min.css defer-->
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/font.css" rel="stylesheet">
-    <link href="css/search.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/cookie-banner.css">
-    <!-- endbuild -->
-    <!--build:js js/head.min.js defer-->
-    <script src="/js/head.js"></script>
-    <!-- endbuild -->
+    <link href="/css/main.min.css" rel="stylesheet">
+    <script src="/js/head.min.js"></script>
   </head>
   <body>
   <div class="collapse" id="navbarToggleExternalContent">
@@ -56,7 +48,7 @@
     <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <img src="img/favicon.png" alt="" width="30" height="30" 
+          <img src="/img/favicon.png" alt="" width="30" height="30" 
           class="d-inline-block align-top" style="border-radius: 50%;">
           <span class="pacifico" style="font-size: larger;">LocTran016</span>
         </a>
@@ -72,19 +64,16 @@
                 Thuyết trình
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/presents/index.html">Slide<i class="bi bi-file-earmark-ppt"></i></a></li>
-                <li><a class="dropdown-item" href="/post/index.html">Bài viết<i class="bi bi-file-post"></i></a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="/slides/index.html">Slide <i class="bi bi-file-earmark-ppt"></i></a></li>
+                <li><a class="dropdown-item" href="/posts/index.html">Bài viết <i class="bi bi-file-post"></i></a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
           <ul class="nav justify-content-end">
             <li class="nav-item">
               <button id="fullScreenButton" class="btn text-nowrap" style="font-size: 1.5rem; color: rgb(255, 255, 255); font-weight: 500;"><i class="bi bi-fullscreen" id="fullscreen" aria-label="Toggle FullScreen"></i></button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: 1.5rem; color: rgb(255, 255, 255); font-weight: 500;" href="/tags"><i class="bi bi-github"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" target="_blank" style="font-size: 1.5rem; color: rgb(255, 255, 255); font-weight: 500;" href="https://github.com/LocTran016/loctran016.github.io"><i class="bi bi-github"></i></a>
