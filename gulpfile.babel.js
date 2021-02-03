@@ -22,7 +22,7 @@ const rename = require('gulp-rename');
 function sassToCss() {
   return src('_site/css/*.scss')
          .pipe(sass())
-         .pipe(dest('public/css/'))
+         .pipe(dest('_site/css/'))
          .pipe(browserSync.reload({
           stream: true
         }));
@@ -96,20 +96,36 @@ function minifyCode() {
 //         stream: true
 //       }));
 // }
-
-function concatCode() {
+function concatBody() {
   return src('_site/js/body/*.js')
       .pipe(sourcemaps.init())
       .pipe(concat('js/body.js'))
-      .pipe(src('_site/js/head/*.js'))
-      .pipe(concat('js/head.js'))
-      .pipe(src('_site/css/*.css'))
-      .pipe(concatCss('css/main.css'))
-      .pipe(gulpIf('*.js',rename({ extname: '.min.js' })))
-      .pipe(gulpIf('*.css',rename({ extname: '.min.css' })))
+      .pipe(rename({ extname: '.min.js' }))
       .pipe(sourcemaps.write())
       .pipe(dest('public/'))
       .pipe(browserSync.reload({
+        stream: true
+      }));     
+}
+function concatHead() {
+  return src('_site/js/hesad/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('js/head.js'))
+      .pipe(rename({ extname: '.min.js' }))
+      .pipe(sourcemaps.write())
+      .pipe(dest('public/')) 
+      .pipe(browserSync.reload({
+        stream: true
+      }));
+}
+function concatCSS() {
+  return src('_site/css/*.css')
+      .pipe(sourcemaps.init())
+      .pipe(concat('css/main.js'))
+      .pipe(rename({ extname: '.min.js' }))
+      .pipe(sourcemaps.write())
+      .pipe(dest('public/'))
+       .pipe(browserSync.reload({
         stream: true
       }));
 }
@@ -147,5 +163,5 @@ function Fileslint() {
 
 exports.favicon = faviconICO();
 exports.develop = parallel(liveReload,watchFiles);
-exports.default = series(Fileslint, imgToWeBP, minImg, sassToCss,  concatCode, 
+exports.default = series(Fileslint, imgToWeBP, minImg, sassToCss,  concatBody, concatHead, concatCSS,
   minifyCode, babelTransfer);
