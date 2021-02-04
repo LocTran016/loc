@@ -106,6 +106,31 @@
         </div>
     </form></div>
 </div><br>
+<div id="site-search">
+  <h4><span class="underline--magical">Search</span></h4>
+  <div class="search-flex">
+    <form id="search-form" name="searchForm" role="form" onsubmit="return false">
+      <div class="search-wrapper">
+        <div class="search-container">
+          <i class="fa fa-search"></i>
+          <input autocomplete="off" placeholder="" id="search" class="search-input" aria-label="Search site" type="text" name="q">
+        </div>
+        <div class="search-error hide-element"><span class="search-error-message"></span></div>
+      </div>
+    </form>
+    <button id="clear-search-results-sidebar" class="button clear-search-results hide-element">Clear Search Results</button>
+    <section class="search-results hide-element">
+  <div id="search-header">
+    <div class="search-query search-query-left">search term: <span id="query"></span></div>
+    <div class="search-query search-query-right"><span id="results-count"></span><span id="results-count-text"></span></div>
+  </div>
+  <button id="clear-search-results-mobile" class="button clear-search-results">Clear Search Results</button>
+  <ul></ul>
+</section>
+
+
+  </div>
+</div>
       <div class="row">
           <div class="col-lg-10 mb-4">
               <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
@@ -115,6 +140,7 @@
               <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacus nulla, egestas nec tempus ut, ullamcorper vel turpis. Suspendisse sed nibh faucibus, volutpat odio vitae, ornare neque. Sed at condimentum risus. Nulla elementum, tellus id consequat imperdiet, arcu est dignissim mi, et ullamcorper elit nibh quis magna. Curabitur eget fermentum diam, id tempus erat. Phasellus a ornare eros. Sed imperdiet, nunc eget placerat accumsan, quam nisl facilisis dui, a sagittis diam nunc non mi. Nulla molestie tempus elementum.</p>
           </div>
       </div>
+  
   
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
   &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
