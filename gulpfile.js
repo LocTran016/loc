@@ -73,6 +73,11 @@ function babelTransfer() {
       .pipe(babel())
       .pipe(dest('public/js/'));
 }
+
+function copyJson() {
+  return src('_site/index.json')
+         .pipe(dest('public/'))
+}
 function minifyHtml(){
   return src('_site/**/*.html')
     .pipe(htmlmin({}))
@@ -170,4 +175,4 @@ function Fileslint() {
 exports.favicon = faviconICO();
 exports.develop = parallel(liveReload,watchFiles);
 exports.default = series(Fileslint, imgToWeBP, minImg, sassToCss,  concatBody, concatHead, concatCSS,
-  minifyCode, minifyHtml);
+  minifyCode, minifyHtml, copyJson);
