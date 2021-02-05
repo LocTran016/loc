@@ -1,0 +1,20 @@
+---
+permalink: /index.json
+---
+[
+{% for present in collections.presents %}
+{
+   "title":"{{present.data.title}}",
+   "href":"{{present.url}}",
+   "excerpt":"{% excerpt present %}",
+   "content": "{{ present.templateContent }}",
+   "category": "{{ present.data.category }}",
+   "img": "{{present.data.img}}",
+   ""alt": "{{present.data.alt}}",
+   "description": "{{present.data.description}}",
+   "dateIso": "{{ present.date | dateIso }}",
+   "dateReadable": "{{present.date | dateReadable}}",
+   "tag": "{{present.data.tags}}"
+} {% if forloop.last == false %},{% endif %}
+{% endfor %} 
+]

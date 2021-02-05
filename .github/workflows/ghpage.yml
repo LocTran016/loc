@@ -32,6 +32,8 @@ jobs:
           CLEAN: true
       - name: Build (gulp) 📄 
         run: yarn build:gulp
+      - name: Push to Algolia 📄 
+        run: node algolia.js
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
