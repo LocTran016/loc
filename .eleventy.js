@@ -46,6 +46,18 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
+  eleventyConfig.addFilter('algExcerpt', function (text) {
+    //first remove code
+    text = text.replace(/<code class="language-.*?">.*?<\/code>/sg, '');
+    //now remove html tags
+    text = text.replace(/<.*?>/g, '');
+    // Remove all space
+    text = text.replace(/\r\n/g, '');
+    // text = text.replace(/\s/g, '')
+    text = text.replace(/\n/g,'')
+    //now limit to 5k
+    return text.substring(0,5000);
+  });
 
     eleventyConfig.setLibrary("md", mdIt);
     eleventyConfig.addLayoutAlias('post', 'post.njk');

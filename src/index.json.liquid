@@ -2,19 +2,18 @@
 permalink: /index.json
 ---
 [
-{% for present in collections.presents %}
+{%- for present in collections.presents -%}
 {
-   "title":"{{present.data.title}}",
+   "title":"{{present.data.title | jsonify}}",
    "href":"{{present.url}}",
-   "excerpt":"{% excerpt present %}",
-   "content": "{{ present.templateContent }}",
+   "content": "{{ present.templateContent | algExcerpt | jsonify }}",
    "category": "{{ present.data.category }}",
    "img": "{{present.data.img}}",
-   ""alt": "{{present.data.alt}}",
+   "alt": "{{present.data.alt}}",
    "description": "{{present.data.description}}",
    "dateIso": "{{ present.date | dateIso }}",
    "dateReadable": "{{present.date | dateReadable}}",
-   "tag": "{{present.data.tags}}"
+   "tag": {{present.data.tags}}
 } {% if forloop.last == false %},{% endif %}
-{% endfor %} 
+{%- endfor -%} 
 ]
