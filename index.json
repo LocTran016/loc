@@ -10,7 +10,13 @@
 <!-- Excerpt End -->
 <p><strong><strong>Nani. What</strong></strong></p>
 ",
-   "category": "A post"
+   "category": "A post",
+   "img": "/img/favicon.png",
+   ""alt": "My imgage",
+   "description": "Thuyết trình Hoá học",
+   "dateIso": "2021-02-06T11:35:48.451Z",
+   "dateReadable": "6 Thg 02 2021",
+   "tag": "["post"]"
 } ,
 
 {
@@ -27,7 +33,13 @@
 <hr>
 <h2 id="slide-3">Slide 3 <a class="direct-link" href="#slide-3">#</a></h2>
 ",
-   "category": "A slide"
+   "category": "A slide",
+   "img": "/img/favicon.png",
+   ""alt": "My image",
+   "description": "Thuyết trình Hoá học",
+   "dateIso": "2021-02-06T11:35:48.451Z",
+   "dateReadable": "6 Thg 02 2021",
+   "tag": ""
 } 
  
 ]
