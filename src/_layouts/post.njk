@@ -54,6 +54,7 @@ category: A post
     <script src="../../js/head.min.js"></script>
   </head>
   <body>
+    {% readerBar %}
     <!-- Nav -->
     <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary">
       <div class="container-fluid">
@@ -94,6 +95,14 @@ category: A post
     </nav>
     <!-- End -->
     <br>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/posts/">Posts</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ post.data.title }}</li>
+      </ol>
+    </nav>
+    <span class="meta__stats">About {{ content | readingTime }} reading time</span>
     {{ content | safe }}
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
   &#x1F36A; This website uses cookies to ensure you get the best experience on our website.

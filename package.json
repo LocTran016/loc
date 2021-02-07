@@ -70,6 +70,9 @@
   "dependencies": {
     "algoliasearch": "^4.8.4",
     "debug": "^4.3.1",
+    "eleventy-plugin-blog-tools": "^0.3.1",
+    "eleventy-plugin-reader-bar": "^0.2.0",
+    "eleventy-plugin-reading-time": "^0.0.1",
     "markdown-it": "^12.0.4",
     "markdown-it-anchor": "^7.0.1",
     "markdown-it-attrs": "^4.0.0",

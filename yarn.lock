@@ -4937,6 +4937,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eleventy-plugin-blog-tools@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "eleventy-plugin-blog-tools@npm:0.3.1"
+  checksum: fe4a921551b8ed0e804f1b1e09ee3b22b96d56e8e32a7a402b03dd361ad05839fab2c7b9344235dafecfa86bc02e8d76f83321426d5e9149d58b5281a2c3b20b
+  languageName: node
+  linkType: hard
+
+"eleventy-plugin-reader-bar@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "eleventy-plugin-reader-bar@npm:0.2.0"
+  peerDependencies:
+    "@11ty/eleventy": ">=0.10"
+  checksum: 44c07aa9c8c1eb2abd8bdc91461089403b37ed4a30affb74acbeb0efdc0b1783da8bc4b26efdead2b36272dc1024244332ac8d38e7a3028ae2008ce9e09da490
+  languageName: node
+  linkType: hard
+
+"eleventy-plugin-reading-time@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "eleventy-plugin-reading-time@npm:0.0.1"
+  checksum: 8b24c87886fa27aed276770bd84a7a69b2f304906cf4eb3606a8369b85e4c026f1052353959626e0dcde17a61934313b8a4c6bd36cdae7457a36b91dd8dfa8b2
+  languageName: node
+  linkType: hard
+
 "emitter-mixin@npm:0.0.3":
   version: 0.0.3
   resolution: "emitter-mixin@npm:0.0.3"
@@ -8715,6 +8738,9 @@ fsevents@~2.3.1:
     algoliasearch: ^4.8.4
     browser-sync: ^2.26.14
     debug: ^4.3.1
+    eleventy-plugin-blog-tools: ^0.3.1
+    eleventy-plugin-reader-bar: ^0.2.0
+    eleventy-plugin-reading-time: ^0.0.1
     eslint: ^7.17.0
     eslint-config-google: ^0.14.0
     eslint-plugin-css-modules: ^2.11.0
