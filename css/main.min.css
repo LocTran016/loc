@@ -1,3 +1,196 @@
+/* .deeper-button */
+
+.deeper-button {
+  display: inline-block;
+  text-decoration: none !important;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
+  transition: 0.3s;
+  font-weight: 700;
+  background-color: #4a44f2;
+  color: #fff;
+  border-radius: 5px;
+  white-space: nowrap;
+  padding: 15px 70px;
+}
+
+/* Effect */
+
+.deeper-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.deeper-button .hover-effect {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  background-color: #393e46;
+  z-index: -1;
+  border-radius: 100%;
+  opacity: 0.5;
+}
+
+.deeper-button:hover .hover-effect {
+  width: calc(100% * 2.25);
+  padding-top: calc(100% * 2.25);
+  opacity: 1;
+}
+
+.deeper-button:hover {
+  color: #fff;
+}
+
+/* .deeper-button */
+
+/* Scroll Top Button
+		-------------------------------------------------------------- */
+
+.fly-me-to-the-moon {
+  position: relative;
+}
+
+#scroll-top {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  transform: translateY(-50%);
+  display: block;
+  line-height: 65px;
+  text-align: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9999;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+#scroll-top:after {
+  content: "FLY";
+  color: #fff;
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all ease 0.3s;
+}
+
+#scroll-top:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4a44f2;
+  z-index: -1;
+  transition: all ease 0.3s;
+  border-radius: 5px;
+}
+
+#scroll-top:hover:before {
+  background-color: #4a44f2;
+}
+
+
+
+#scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scroll-top:hover:after {
+  animation: 1s hvr-buzz-out alternate linear infinite;
+}
+
+#scroll-top.flyout {
+  overflow: visible;
+}
+
+#scroll-top.flyout:after {
+  animation: 1s flyout linear;
+}
+
+/* Animation 
+		----------------------------------------------*/
+
+@keyframes flyout {
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  40% {
+    transform: scale(1.1) translate(-5px, 5px);
+  }
+
+  70% {
+    transform: scale(0.9) translate(30px, -30px);
+  }
+
+  100% {
+    transform: scale(0.7) translate(75px, -75px);
+    opacity: 0;
+  }
+}
+
+@keyframes hvr-buzz-out {
+  10% {
+    transform: translateX(3%) rotate(2deg);
+  }
+
+  20% {
+    transform: translateX(-3%) rotate(-2deg);
+  }
+
+  30% {
+    transform: translateX(3%) rotate(2deg);
+  }
+
+  40% {
+    transform: translateX(-3%) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateX(2%) rotate(1deg);
+  }
+
+  60% {
+    transform: translateX(-2%) rotate(-1deg);
+  }
+
+  70% {
+    transform: translateX(2%) rotate(1deg);
+  }
+
+  80% {
+    transform: translateX(-2%) rotate(-1deg);
+  }
+
+  90% {
+    transform: translateX(1%) rotate(0);
+  }
+
+  to {
+    transform: translateX(-1%) rotate(0);
+  }
+}
+
+/* Scroll Top Button
+		-------------------------------------------------------------- */
 .nk-cookie-banner {
   position: fixed;
   bottom: 0px;
