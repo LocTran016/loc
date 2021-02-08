@@ -1,5 +1,5 @@
 # Loc
-![Build Status](https://github.com/LocTran016/loctran016.github.io/workflows/.github/workflows/ghpage.yml/badge.svg)
+![GitHub Page](https://github.com/LocTran016/loctran016.github.io/workflows/GitHub%20Page/badge.svg)
 
 ## Install
 
