@@ -31,6 +31,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  
+eleventyConfig.addPassthroughCopy("src/scss")
 
   eleventyConfig.addCollection("presents", function(collection) {
     return collection.getFilteredByGlob('**/*.md').sort((a,b) => {

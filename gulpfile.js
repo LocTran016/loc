@@ -21,7 +21,7 @@ const rename = require('gulp-rename');
 const htmlmin = require('gulp-htmlmin');
 
 function sassToCss() {
-  return src('_site/css/*.scss')
+  return src('_site/scss/*.scss')
          .pipe(sass())
          .pipe(dest('_site/css/'))
          .pipe(browserSync.reload({
