@@ -6,6 +6,8 @@ img: /img/favicon.png
 tags: post
 alt: My imgage
 category: A post
+date: Last Modified
+cat: post
 ---
 <!DOCTYPE html>
 <html lang="vi-VN">
@@ -99,10 +101,11 @@ category: A post
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item"><a href="/posts/">Posts</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ post.data.title }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
       </ol>
     </nav>
     <span class="meta__stats">About {{ content | readingTime }} reading time</span>
+    <h1>{{ title }}</h1>
     {{ content | safe }}
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
   &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
@@ -111,7 +114,7 @@ category: A post
     I Got It
   </button>
 </div>
-<span class="badge bg-success text-wrap fs-6 rounded-pill">{{ post.data.tags }}</span>
+{%- for tag in tags -%}<span class="badge bg-success text-wrap fs-6 rounded-pill">{{ tags }}</span>{%- endfor -%}
 <script src="https://utteranc.es/client.js"
         repo="loctran016/comments"
         issue-term="title"

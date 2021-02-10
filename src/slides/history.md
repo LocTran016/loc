@@ -1,5 +1,5 @@
 ---
-title: Hoá học
+title: Chemistry
 layout: slide
 author: LocTran016
 description: Thuyết trình Hoá học
