@@ -93,11 +93,30 @@ module.exports = function(eleventyConfig) {
   
       if (tokens[idx].nesting === 1) {
         // opening tag
-        return '<details class="details custom-block"><summary>' + md.utils.escapeHtml(m[1]) + '</suummary>\n';
+        return '<details class="details custom-block"><summary>' + md.utils.escapeHtml(m[1]) + '</summary>\n';
   
       } else {
         // closing tag
         return '</details>\n';
+      }
+    }
+  })
+  .use(mdItContainer, 'section', {
+
+    validate: function(params) {
+      return params.trim().match(/^section\s+(.*)$/);
+    },
+  
+    render: function (tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^section\s+(.*)$/);
+  
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        return '<section ' + md.utils.escapeHtml(m[1]) + '>\n';
+  
+      } else {
+        // closing tag
+        return '</section>\n';
       }
     }
   })
