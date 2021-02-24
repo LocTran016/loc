@@ -8769,6 +8769,7 @@ fsevents@~2.3.1:
     markdown-it-anchor: ^7.0.1
     markdown-it-attrs: ^4.0.0
     markdown-it-bracketed-spans: ^1.0.1
+    markdown-it-container: ^3.0.0
     markdown-it-table-of-contents: ^0.5.2
     mobile-device-detect: ^0.4.3
     moment: ^2.29.1
@@ -9087,6 +9088,13 @@ fsevents@~2.3.1:
   version: 1.0.1
   resolution: "markdown-it-bracketed-spans@npm:1.0.1"
   checksum: 132921700eff60d02db6bc492d7343b7a7da8c0b7c5c7c0f754b32b295f6a7288ba041b84224e5f36e37f10cdf48f7e3d1ee4fd7a37366b4b4ec1ba3ce32e39e
+  languageName: node
+  linkType: hard
+
+"markdown-it-container@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "markdown-it-container@npm:3.0.0"
+  checksum: 7d011d1151770a80a8eb15436556fbf5b7f0579ec81a57675fa93dbde4ff3958ea87b2048f688d3e1179dfe3dcb03e80891da5f6c28fb056980d8fc7bd5bdc43
   languageName: node
   linkType: hard
 

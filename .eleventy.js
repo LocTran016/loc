@@ -8,8 +8,9 @@ module.exports = function(eleventyConfig) {
     var markdownIt = require("markdown-it");
     var mdItAnchor = require('markdown-it-anchor');
     var mdItToc = require('markdown-it-table-of-contents');
-    var mdItAttrs = require('markdown-it-attrs')
-    var mdItBracketedSpan= require('markdown-it-bracketed-spans')
+    var mdItAttrs = require('markdown-it-attrs');
+    var mdItBracketedSpan= require('markdown-it-bracketed-spans');
+    var mdItContainer = require('markdown-it-container');
     /************** MARKDOWN ******************/
     let mdIt = markdownIt({
 		html: true,
@@ -24,6 +25,82 @@ module.exports = function(eleventyConfig) {
 		level: [1,2,3,4]
 	})
   .use(mdItToc)
+  .use(mdItContainer, 'tip', {
+
+    validate: function(params) {
+      return params.trim().match(/^tip\s+(.*)$/);
+    },
+  
+    render: function (tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^tip\s+(.*)$/);
+  
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        return '<div class="tip custom-block"><p class="custom-block-title">' + md.utils.escapeHtml(m[1]) + '</p>\n';
+  
+      } else {
+        // closing tag
+        return '</div>\n';
+      }
+    }
+  })
+  .use(mdItContainer, 'warning', {
+
+    validate: function(params) {
+      return params.trim().match(/^warning\s+(.*)$/);
+    },
+  
+    render: function (tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^warning\s+(.*)$/);
+  
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        return '<div class="warning custom-block"><p class="custom-block-title">' + md.utils.escapeHtml(m[1]) + '</p>\n';
+  
+      } else {
+        // closing tag
+        return '</div>\n';
+      }
+    }
+  })
+  .use(mdItContainer, 'danger', {
+
+    validate: function(params) {
+      return params.trim().match(/^danger\s+(.*)$/);
+    },
+  
+    render: function (tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^danger\s+(.*)$/);
+  
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        return '<div class="danger custom-block"><p class="custom-block-title">' + md.utils.escapeHtml(m[1]) + '</p>\n';
+  
+      } else {
+        // closing tag
+        return '</div>\n';
+      }
+    }
+  })
+  .use(mdItContainer, 'detail', {
+
+    validate: function(params) {
+      return params.trim().match(/^detail\s+(.*)$/);
+    },
+  
+    render: function (tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^detail\s+(.*)$/);
+  
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        return '<details class="details custom-block"><summary>' + md.utils.escapeHtml(m[1]) + '</suummary>\n';
+  
+      } else {
+        // closing tag
+        return '</details>\n';
+      }
+    }
+  })
   .use(mdItAttrs)
   .use(mdItBracketedSpan);
   /************** MARKDOWN ******************/
