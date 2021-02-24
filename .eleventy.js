@@ -36,7 +36,7 @@ module.exports = function(eleventyConfig) {
   
       if (tokens[idx].nesting === 1) {
         // opening tag
-        return '<div class="tip custom-block"><p class="custom-block-title">' + md.utils.escapeHtml(m[1]) + '</p>\n';
+        return '<div class="tip custom-block"><p class="custom-block-title">' + markdownIt.utils.escapeHtml(m[1]) + '</p>\n';
   
       } else {
         // closing tag
@@ -55,7 +55,7 @@ module.exports = function(eleventyConfig) {
   
       if (tokens[idx].nesting === 1) {
         // opening tag
-        return '<div class="warning custom-block"><p class="custom-block-title">' + md.utils.escapeHtml(m[1]) + '</p>\n';
+        return '<div class="warning custom-block"><p class="custom-block-title">' + markdownIt.utils.escapeHtml(m[1]) + '</p>\n';
   
       } else {
         // closing tag
@@ -74,7 +74,7 @@ module.exports = function(eleventyConfig) {
   
       if (tokens[idx].nesting === 1) {
         // opening tag
-        return '<div class="danger custom-block"><p class="custom-block-title">' + md.utils.escapeHtml(m[1]) + '</p>\n';
+        return '<div class="danger custom-block"><p class="custom-block-title">' + markdownIt.utils.escapeHtml(m[1]) + '</p>\n';
   
       } else {
         // closing tag
@@ -93,7 +93,7 @@ module.exports = function(eleventyConfig) {
   
       if (tokens[idx].nesting === 1) {
         // opening tag
-        return '<details class="details custom-block"><summary>' + md.utils.escapeHtml(m[1]) + '</summary>\n';
+        return '<details class="details custom-block"><summary>' + markdownIt.utils.escapeHtml(m[1]) + '</summary>\n';
   
       } else {
         // closing tag
@@ -112,7 +112,7 @@ module.exports = function(eleventyConfig) {
   
       if (tokens[idx].nesting === 1) {
         // opening tag
-        return '<section ' + md.utils.escapeHtml(m[1]) + '>\n';
+        return '<section ' + markdownIt.utils.escapeHtml(m[1]) + '>\n';
   
       } else {
         // closing tag
