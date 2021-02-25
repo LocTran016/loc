@@ -6,7 +6,7 @@ description: Thuyết trình Hoá học
 img: /img/favicon.png
 ---
 ::: section
-## {{ title }}
+# Section 1
 A paragraph with some text and a [link](http://hakim.se).
 <!-- Excerpt Start -->
 This is included on the homepage.
@@ -14,8 +14,11 @@ This is included on the homepage.
 :::
 
 ::: section
+
 ## Slide 2
+
 ::: section
+
 ## Slide 3
 :::
 :::
