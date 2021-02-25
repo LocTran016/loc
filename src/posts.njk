@@ -89,7 +89,7 @@
     {% if i == 0 and not hideFirst %}...{% endif %}
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-        {%-for post in collections.all -%}
+        {%-for post in collections.allPosts -%}
         {%-if post.data.layout == 'post' -%}
           <div class="col">
             <div class="card h-100">

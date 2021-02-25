@@ -131,13 +131,18 @@ module.exports = function(eleventyConfig) {
 eleventyConfig.addPassthroughCopy("src/scss")
 
   eleventyConfig.addCollection("presents", function(collection) {
-    return collection.getFilteredByGlob('**/*.md').sort((a,b) => {
+    return collectionApi.getFilteredByGlob('**/*.md').sort((a,b) => {
       if(a.data.title < b.data.title) return -1;
       if(a.data.title > b.date.title) return 1;
       return 0;
     });
   });
-
+  eleventyConfig.addCollection("allPosts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/posts/*.md");
+  });
+  eleventyConfig.addCollection("allSlides", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/slides/*.md");
+  });
   eleventyConfig.addFilter('dateIso', date => {
     return moment(date).toISOString();
   });
