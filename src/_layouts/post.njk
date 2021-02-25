@@ -104,9 +104,12 @@ cat: post
         <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
       </ol>
     </nav>
-    <span class="meta__stats">About {{ content | readingTime }} reading time</span>
+    <span class="meta__stats">About {{ content | readingTime | safe }} reading time</span>
+    <aside>{{ content | toc | safe }}</aside>
     <h1>{{ title }}</h1>
+    <article>
     {{ content | safe }}
+    </article>
     <div class="nk-cookie-banner alert alert-dark text-center mb-0" role="alert">
   &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
   <a href="https://www.cookiesandyou.com/" target="blank">Learn more</a>

@@ -2,6 +2,7 @@ const moment = require('moment');
 const readingTime = require('eleventy-plugin-reading-time');
 const readerBar = require('eleventy-plugin-reader-bar');
 const blogTools = require("eleventy-plugin-blog-tools");
+const pluginTOC = require('eleventy-plugin-toc');
  
 moment.locale('vi');
 module.exports = function(eleventyConfig) {
@@ -170,6 +171,9 @@ eleventyConfig.addPassthroughCopy("src/scss")
     eleventyConfig.addPlugin(readingTime);
     eleventyConfig.addPlugin(readerBar);
     eleventyConfig.addPlugin(blogTools);
+    eleventyConfig.addPlugin(pluginTOC, {
+      tags: ['h2', 'h3'],
+      })
     return {
       dir: {
         input: "src",
