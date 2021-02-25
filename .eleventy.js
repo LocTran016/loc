@@ -8,7 +8,6 @@ moment.locale('vi');
 module.exports = function(eleventyConfig) {
     var markdownIt = require("markdown-it");
     var mdItAnchor = require('markdown-it-anchor');
-    var mdItToc = require('markdown-it-table-of-contents');
     var mdItAttrs = require('markdown-it-attrs');
     var mdItBracketedSpan= require('markdown-it-bracketed-spans');
     var mdItContainer = require('markdown-it-container');
@@ -25,7 +24,6 @@ module.exports = function(eleventyConfig) {
 		permalinkSymbol: "#",
 		level: [1,2,3,4]
 	})
-  .use(mdItToc)
   .use(mdItContainer, 'tip', {
 
     validate: function(params) {
