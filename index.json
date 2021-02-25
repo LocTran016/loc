@@ -6,18 +6,18 @@
    "img": "/img/favicon.png",
    "alt": "My imgage",
    "description": "Thuyết trình Hoá học",
-   "dateIso": "2021-02-25T12:50:01.643Z",
+   "dateIso": "2021-02-25T15:22:06.129Z",
    "dateReadable": "25 Thg 02 2021",
    "tag": ["post"]
 } ,{
    "title":"Chemistry",
    "href":"/slides/history/",
-   "content": "::: sectionChemistry #A paragraph with some text and a link.This is included on the homepage.:::::: sectionSlide 2 #::: sectionSlide 3 #::::::",
+   "content": "::: sectionSection 1 #A paragraph with some text and a link.This is included on the homepage.:::::: sectionSlide 2 #::: sectionSlide 3 #::::::",
    "category": "A slide",
    "img": "/img/favicon.png",
    "alt": "My image",
    "description": "Thuyết trình Hoá học",
-   "dateIso": "2021-02-25T12:50:01.643Z",
+   "dateIso": "2021-02-25T15:22:06.129Z",
    "dateReadable": "25 Thg 02 2021",
    "tag": ["slide"]
 } ]
