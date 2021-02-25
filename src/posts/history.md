@@ -22,6 +22,6 @@ This is a warning
 This is a dangerous warning
 :::
 
-::: details  Detail
+::: detail  Detail
 This is a details block, which does not work in IE / Edge
 :::
