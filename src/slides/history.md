@@ -12,6 +12,7 @@ A paragraph with some text and a [link](http://hakim.se).
 This is included on the homepage.
 <!-- Excerpt End -->
 :::
+
 ::: section
 ## Slide 2
 ::: section
