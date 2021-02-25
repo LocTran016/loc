@@ -131,7 +131,7 @@ module.exports = function(eleventyConfig) {
   
 eleventyConfig.addPassthroughCopy("src/scss")
 
-  eleventyConfig.addCollection("presents", function(collection) {
+  eleventyConfig.addCollection("presents", function(collectionApi) {
     return collectionApi.getFilteredByGlob('**/*.md').sort((a,b) => {
       if(a.data.title < b.data.title) return -1;
       if(a.data.title > b.date.title) return 1;
