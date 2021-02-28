@@ -1,0 +1,23 @@
+[{
+   "title":"Chemistry",
+   "href":"/posts/history/",
+   "content": "This is included on the homepage.Nani. WhatTIPThis is a tipWarningThis is a warningDangerThis is a dangerous warningDetailThis is a details block, which does not work in IE / Edge",
+   "category": "A post",
+   "img": "/img/favicon.png",
+   "alt": "My imgage",
+   "description": "Thuyết trình Hoá học",
+   "dateIso": "2021-02-28T14:09:14.789Z",
+   "dateReadable": "28 Thg 02 2021",
+   "tag": ["post"]
+} ,{
+   "title":"Chemistry",
+   "href":"/slides/history/",
+   "content": "::: sectionSection 1 #A paragraph with some text and a link.This is included on the homepage.:::::: sectionSlide 2 #::: sectionSlide 3 #::::::",
+   "category": "A slide",
+   "img": "/img/favicon.png",
+   "alt": "My image",
+   "description": "Thuyết trình Hoá học",
+   "dateIso": "2021-02-28T14:09:14.793Z",
+   "dateReadable": "28 Thg 02 2021",
+   "tag": ["slide"]
+} ]
