@@ -282,7 +282,9 @@
   font-family: 'Potta One', cursive;
 }
 html {
-  background-color: #ffffff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: unset;
 }
 
 body {
