@@ -20,10 +20,8 @@ jobs:
           persist-credentials: false 
       - name: Install 🔧
         run: yarn install
-      - name: Build (11ty) 📄 
-        run: yarn build:11ty
-      - name: Build (gulp) 📄 
-        run: yarn build:gulp
+      - name: Build 📄 
+        run: yarn build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
@@ -31,4 +29,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: public
+          CLEAN: true
+      - name: Test 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/webpack'}}
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: webpack-demo
+          FOLDER: _site
           CLEAN: true
