@@ -6226,9 +6226,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"loctran@workspace:.":
+"loctran016@workspace:.":
   version: 0.0.0-use.local
-  resolution: "loctran@workspace:."
+  resolution: "loctran016@workspace:."
   dependencies:
     "@11ty/eleventy": ^0.11.1
     "@babel/cli": ^7.13.0

@@ -16,7 +16,7 @@
     "lint-ci": "run-script-os",
     "lint-ci:default": "yarn lint; yarn lint --fix",
     "lint-ci:win32": "yarn lint & yarn lint --fix",
-    "build": "npx @11ty/eleventy & webpack",
+    "build": "npx @11ty/eleventy && npx webpack",
     "dev": "npx @11ty/eleventy --watch",
     "upgrade": "yarn set version latest",
     "debug": "run-script-os",
