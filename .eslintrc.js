@@ -9,7 +9,7 @@ module.exports = {
     'css-modules',
   ],
   'extends': [
-    'google',
+    'prettier',
     'plugin:css-modules/recommended',
   ],
   'parserOptions': {
@@ -23,5 +23,18 @@ module.exports = {
     'no-invalid-this': false,
     'no-unused-vars': false,
     'require-jsdoc': false,
+    "prettier/prettier": [
+      "warn",
+      {
+        "arrowParens": "avoid",
+        "semi": false,
+        "trailingComma": "none",
+        "endOfLine": "lf",
+        "tabWidth": 2,
+        "printWidth": 80,
+        "useTabs": false
+      }
+    ],
+    "no-console": "warn"
   },
 };

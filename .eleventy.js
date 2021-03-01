@@ -123,7 +123,7 @@ module.exports = function(eleventyConfig) {
   .use(mdItBracketedSpan);
   /************** MARKDOWN ******************/
 
-  // eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/assets");
   // eleventyConfig.addPassthroughCopy("src/js");
   // eleventyConfig.addPassthroughCopy("src/scss");
 
@@ -157,6 +157,12 @@ module.exports = function(eleventyConfig) {
     text = text.replace(/\r\n/g, '');
     // text = text.replace(/\s/g, '')
     text = text.replace(/\n/g,'')
+    // Remove all things for markdown-it-container above
+    text = text.replace(/::: section/g,'')
+    text = text.replace(/::: tip/g,'')
+    text = text.replace(/::: danger/g,'')
+    text = text.replace(/::: detail/g,'')
+    text = text.replace(/::: warning/g,'')
     //now limit to 5k
     return text.substring(0,5000);
   });
