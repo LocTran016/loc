@@ -28,7 +28,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: public
+          FOLDER: _site
           CLEAN: true
       - name: Test 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
