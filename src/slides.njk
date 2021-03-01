@@ -6,7 +6,7 @@
       <meta name="author" content="LocTran016" />
       <meta name="description" content="This store all my presentation at my school" />
       <meta property="og:description" content="All my presentations is here!" />
-      <meta property="og:image" content="img/favicon.jpeg" />
+      <meta property="og:image" content="assets/favicon.jpeg" />
       <meta name="twitter:title" content="LocTran016">
       <title>LocTran016</title>
       <link rel="manifest" href="/manifest.webapp">
@@ -21,7 +21,7 @@
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-      <link rel="shortcut icon" type="image/jpg" href="img/favicon.jpeg"/>
+      <link rel="shortcut icon" type="image/jpg" href="assets/favicon.jpeg"/>
       <!-- External -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZWME15JKC"></script>
     <script>
@@ -50,7 +50,7 @@
     <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <img src="/img/favicon.png" alt="" width="30" height="30" 
+          <assets src="/assets/favicon.png" alt="" width="30" height="30" 
           class="d-inline-block align-top" style="border-radius: 50%;">
           <span class="pacifico" style="font-size: larger;">LocTran016</span>
         </a>
@@ -92,7 +92,7 @@
           <div class="col">
             <div class="card h-100">
               <a href="{{ post.url }}" class="text-decoration-none">
-              <img src="{{ post.data.img }}" class="card-img-top" alt="{{ post.data.alt }}" />
+              <assets src="{{ post.data.assets }}" class="card-assets-top" alt="{{ post.data.alt }}" />
               <div class="card-body">
                 <h5 class="card-title">{{ post.data.title }}</h5>
                 <p class="card-text">{{ post.data.description }}</p>

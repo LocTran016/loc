@@ -9,4 +9,4 @@
 #/.pnp.*
 node_modules
 public
-_site
+public

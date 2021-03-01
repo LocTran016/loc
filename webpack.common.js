@@ -10,13 +10,13 @@ module.exports = {
   },
   output: {
     filename: '[name].min.js',
-    path: path.resolve(__dirname, '_site/js/')
+    path: path.resolve(__dirname, 'public/js/')
   },
   plugins: [
      new CleanWebpackPlugin(),
      new HtmlWebpackPlugin(),
      new FaviconsWebpackPlugin({
-      logo: './src/img/favicon.svg',
+      logo: './src/assets/favicon.svg',
       mode: 'webapp',
   })
    ],

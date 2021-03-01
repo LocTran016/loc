@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: "development",
   output: {
     filename: "[name].min.js",
-    path: path.resolve(__dirname, "_site")
+    path: path.resolve(__dirname, "public")
   },
   plugins: [
     new HtmlWebpackPlugin()

@@ -3,7 +3,7 @@ title: Chemistry
 layout: slide
 author: LocTran016
 description: Thuyết trình Hoá học
-img: /img/favicon.png
+assets: /assets/favicon.png
 ---
 ::: section
 # Section 1

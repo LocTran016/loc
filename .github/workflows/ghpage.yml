@@ -28,7 +28,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: _site
+          FOLDER: public
           CLEAN: true
       - name: Test 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -36,5 +36,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: webpack-demo
-          FOLDER: _site
+          FOLDER: public
           CLEAN: true

@@ -123,7 +123,7 @@ module.exports = function(eleventyConfig) {
   .use(mdItBracketedSpan);
   /************** MARKDOWN ******************/
 
-  // eleventyConfig.addPassthroughCopy("src/img");
+  // eleventyConfig.addPassthroughCopy("src/assets");
   // eleventyConfig.addPassthroughCopy("src/js");
   // eleventyConfig.addPassthroughCopy("src/scss");
 
@@ -173,6 +173,7 @@ module.exports = function(eleventyConfig) {
     return {
       dir: {
         input: "src",
+        output: "public",
         layouts: "_layouts"
       }
     };
