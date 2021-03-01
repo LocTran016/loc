@@ -5,6 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
+  const isDev = agrv.mode === 'development'
   entry: {
     body: './src/js/body.js',
     head: './src/js/head.js',
@@ -70,13 +71,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(s[ac]ss|css)$/,
         use: [
-          "style-loader", //3. Inject styles into DOM
-          "css-loader", //2. Turns css into commonjs
-          "sass-loader" //1. Turns sass into css
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { sourceMap: isDev ? true : false }
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: isDev ? true : false }
+          }
         ]
-      }
+      },
     ]
   }
 };
