@@ -3,10 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-plugins: [
-  
-]
-
 module.exports = {
   entry: {
     body: './src/js/body.js',
@@ -18,9 +14,7 @@ module.exports = {
   },
   plugins: [
      new CleanWebpackPlugin(),
-     new HtmlWebpackPlugin({
-       title: 'Output Management'
-     })
+     new HtmlWebpackPlugin(),
      new FaviconsWebpackPlugin({
       logo: './src/img/favicon.svg',
       mode: 'webapp',
