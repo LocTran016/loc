@@ -24,11 +24,8 @@ module.exports = {
       extensions: ['js','scss','css'],
       fix: true,
       outputReport: path.resolve(__dirname, 'report.txt'),
-      'env': {
-        'browser': true,
-        'es6': true,
-        'commonjs': true,
-      },
+      /* envs: ['browser','es6','commonjs',],
+      baseConfig: {
       'plugins': [
         'html',
         'css-modules',
@@ -41,28 +38,29 @@ module.exports = {
         'ecmaVersion': 6,
         'sourceType': 'module',
       },
-      'rules': {
-        'css-modules/no-unused-class': [2, {'camelCase': true}],
-        'css-modules/no-undef-class': [2, {'camelCase': true}],
-        'linebreak-style': false,
-        'no-invalid-this': false,
-        'no-unused-vars': false,
-        'require-jsdoc': false,
-        "prettier/prettier": [
-          "warn",
-          {
-            "arrowParens": "avoid",
-            "semi": false,
-            "trailingComma": "none",
-            "endOfLine": "lf",
-            "tabWidth": 2,
-            "printWidth": 80,
-            "useTabs": false
-          }
-        ],
-        "no-console": "warn"
-      },
-    })
+    },
+    'rules': {
+      'css-modules/no-unused-class': [2, {'camelCase': true}],
+      'css-modules/no-undef-class': [2, {'camelCase': true}],
+      'linebreak-style': false,
+      'no-invalid-this': false,
+      'no-unused-vars': false,
+      'require-jsdoc': false,
+      "prettier/prettier": [
+        "warn",
+        {
+          "arrowParens": "avoid",
+          "semi": false,
+          "trailingComma": "none",
+          "endOfLine": "lf",
+          "tabWidth": 2,
+          "printWidth": 80,
+          "useTabs": false
+        }
+      ],
+      "no-console": "warn"
+    },*/
+  })
    ],
   optimization: {
     splitChunks: {
