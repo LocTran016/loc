@@ -3,9 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin');
-
+const isDev = agrv.mode === 'development';
 module.exports = {
-  const isDev = agrv.mode === 'development'
   entry: {
     body: './src/js/body.js',
     head: './src/js/head.js',
