@@ -22,7 +22,8 @@ module.exports = {
     new ESLintPlugin({
       extensions: ['js','scss','css'],
       fix: true,
-      outputReport: path.resolve(__dirname, 'report.txt'),
+      outputReport: true,
+      // outputReport: path.resolve(__dirname, 'report.txt'),
       /* envs: ['browser','es6','commonjs',],
       baseConfig: {
       'plugins': [
