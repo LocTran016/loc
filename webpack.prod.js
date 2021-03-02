@@ -16,5 +16,16 @@ module.exports = merge(common, {
         minimize: true,
         minimizer: [new TerserPlugin()],
     },
+    module: {
+      rules: [
+        {
+          test: /\.(s[ac]ss|css)$/,
+          use: [
+            'css-loader',
+            'sass-loader'
+          ]
+        },
+      ]
+    }
   });
   

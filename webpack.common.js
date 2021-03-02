@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin');
-const isDev = agrv.mode === 'development';
 module.exports = {
   entry: {
     body: './src/js/body.js',
@@ -73,14 +72,6 @@ module.exports = {
         test: /\.(s[ac]ss|css)$/,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: { sourceMap: isDev ? true : false }
-          },
-          {
-            loader: 'sass-loader',
-            options: { sourceMap: isDev ? true : false }
-          }
         ]
       },
     ]
