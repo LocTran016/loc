@@ -1,27 +1,28 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
+const ESLintPlugin = require("eslint-webpack-plugin")
 module.exports = {
-  entry : {
-    body : './src/js/body.js',
-    head : './src/js/head.js',
+  entry: {
+    body: "./src/js/body.js",
+    head: "./src/js/head.js"
   },
-  output : {
-    filename : '[name].min.js',
-    path : path.resolve(__dirname, 'public/js/')
+  output: {
+    filename: "[name].min.js",
+    path: path.resolve(__dirname, "public/js/")
   },
-  plugins : [
-    new CleanWebpackPlugin(), new HtmlWebpackPlugin(),
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin(),
     new FaviconsWebpackPlugin({
-      logo : './src/assets/favicon.svg',
-      mode : 'webapp',
+      logo: "./src/assets/favicon.svg",
+      mode: "webapp"
     }),
     new ESLintPlugin({
-      extensions : [ 'js', 'scss', 'css' ],
-      fix : true,
-      outputReport : true,
+      extensions: ["js", "scss", "css"],
+      fix: true,
+      outputReport: true
       // outputReport: path.resolve(__dirname, 'report.txt'),
       /* envs: ['browser','es6','commonjs',],
       baseConfig: {
@@ -61,15 +62,13 @@ module.exports = {
     },*/
     })
   ],
-  optimization : {splitChunks : {chunks : 'all'}},
-  module : {
-    rules : [
+  optimization: { splitChunks: { chunks: "all" } },
+  module: {
+    rules: [
       {
-        test : /\.(s[ac]ss|css)$/,
-        use : [
-          'style-loader',
-        ]
-      },
+        test: /\.(s[ac]ss|css)$/,
+        use: ["style-loader"]
+      }
     ]
   }
-};
+}
