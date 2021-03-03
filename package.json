@@ -20,8 +20,8 @@
     "lint-ci:default": "yarn lint; yarn lint --fix",
     "lint-ci:win32": "yarn lint & yarn lint --fix",
     "build": "npx @11ty/eleventy && webpack --config webpack.prod.js",
-    "dev:11ty": "npx @11ty/eleventy --watch",
-    "dev:webpack": "webpack serve --config webpack.dev.js --open",
+    "dev:11ty": "npx @11ty/eleventy --serve --port=8081",
+    "dev:webpack": "webpack --config webpack.dev.js",
     "dev": "npm-run-all --parallel dev:11ty dev:webpack",
     "clean": "del public/**",
     "upgrade": "yarn set version latest",
@@ -62,7 +62,6 @@
     "terser-webpack-plugin": "^5.1.1",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {

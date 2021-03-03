@@ -12,13 +12,14 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin()
   ],
-  devServer: {
+  watch: true,
+  /* devServer: {
     contentBase: 'public',
     port: 3000,
     hot: true,
     publicPath: '/js/',
     watchContentBase: true
-  },
+  },*/
   devtool: 'inline-source-map',
   module: {
     rules: [
