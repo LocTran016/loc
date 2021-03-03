@@ -5,23 +5,19 @@ author: LocTran016
 description: Thuyết trình Hoá học
 assets: /assets/favicon.png
 ---
+
 <!-- Excerpt Start -->
+
 This is included on the homepage.
+
 <!-- Excerpt End -->
-__**Nani. What**__
 
-::: tip TIP
-This is a tip
-:::
+****Nani. What****
 
-::: warning Warning
-This is a warning
-:::
+::: tip TIP This is a tip :::
 
-::: danger Danger
-This is a dangerous warning
-:::
+::: warning Warning This is a warning :::
 
-::: detail  Detail
-This is a details block, which does not work in IE / Edge
-:::
+::: danger Danger This is a dangerous warning :::
+
+::: detail Detail This is a details block, which does not work in IE / Edge :::
