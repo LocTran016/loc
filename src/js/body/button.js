@@ -1,7 +1,11 @@
-var buttonHover = function() {
-    $('.deeper-button').each(function() {
+import '../../scss/button.scss';
+"use strict";
 
-        $(this).mouseenter(function(e) {
+/* Button Hover */
+var buttonHover = () => {
+    $('.deeper-button').each(() => {
+
+        $(this).mouseenter((e) => {
            var parentOffset = $(this).offset(); 
           
            var relX = e.pageX - parentOffset.left;
@@ -9,7 +13,7 @@ var buttonHover = function() {
            $(this).find('.hover-effect').css({"left": relX, "top": relY });
         });
 
-        $(this).mouseleave(function(e) {
+        $(this).mouseleave((e) => {
 
              var parentOffset = $(this).offset(); 
 
@@ -20,15 +24,38 @@ var buttonHover = function() {
     })
 }
 
-buttonHover();
-
-
-var fly = function() {
-    $('#scroll-top').on('click', function() {
+/* Scroll To Top Button */
+var fly = () => {
+    $('#scroll-top').click(() => {
         $(this).addClass('flyout');
     })
 }
 
+/****** Full Screen Button *******/
+var fullScreen = () => {$(document).ready(() => {
+    $('#fullScreenButton')
+        .click(() => {
+          if (screenfull.isEnabled) {
+            screenfull.toggle();
+            $('#fullscreen').removeAttr('class');
+            $('#fullscreen').attr('class',
+    screenfull.isFullscreen ? 'bi bi-fullscreen':'bi bi-fullscreen-exit');
+          } else {
+            alert('Your browser doesn\'t support full screen');
+          }
+          if (screenfull.isEnabled) {
+            screenfull.on('change', () => {
+              console.log('Am I fullscreen?',
+            screenfull.isFullscreen ? 'Yes' : 'No');
+            });
+          }
+        });
+  });}
+
+buttonHover();
+fullScreen();
 fly();
+  
+  
 
 

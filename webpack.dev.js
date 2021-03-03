@@ -1,6 +1,6 @@
+const { merge } = require("webpack-merge");
 const path = require("path");
 const common = require("./webpack.common");
-const merge = require("webpack-merge");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
@@ -12,6 +12,14 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin()
   ],
+  devServer: {
+    contentBase: 'public',
+    port: 3000,
+    hot: true,
+    publicPath: '/js/',
+    watchContentBase: true
+  },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {

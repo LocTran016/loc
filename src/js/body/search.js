@@ -1,3 +1,6 @@
+import '../../scss/search.scss';
+"use strict";
+
 const searchToggle = (obj, evt) => {
   const container = $(obj).closest('#search-wrapper');
   const icon = $(obj).closest('#search-icon')

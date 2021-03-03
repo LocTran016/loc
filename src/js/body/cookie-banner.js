@@ -1,3 +1,6 @@
+import '../../scss/cookie-banner.scss';
+"use strict";
+
 /*
 * Javascript to show and hide cookie banner using localstroage
 */
